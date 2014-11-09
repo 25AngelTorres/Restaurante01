@@ -1,6 +1,6 @@
 <?php 
 session_start();     
-      //include ('../../libs/adodb5/adodb-pager.inc.php');
+      include ('../../libs/adodb5/adodb-pager.inc.php');
       include ('../../libs/adodb5/adodb.inc.php');
       include ('../../models/Conexion.php');
       include ('../../models/Modelo.php');
@@ -11,11 +11,21 @@ session_start();
 
       $login = new LoginController();
       if (isset($_POST['email'])) {
+          echo "<pre>";
+          print_r($_POST);
+          echo "</pre>";
+          die();
+
         $login->validaUsuario($_POST);
       }
        
       include ('../layouts/header.php');
+
+
 ?>
+
+<header class="header_home">
+  
 
 <section class="intro" >
         <div class="intro-body" id="login">
@@ -34,11 +44,12 @@ session_start();
                         </div>
                         <form role="form" method="POST" >
                           <div class="form-group">
-                            <label for="exampleInputEmail1">Email</label>
-                            <input type="email" class="form-control" id="email" name="email" >
+
+                            <label for="email">Usuario</label>
+                            <input type="text" class="form-control" id="email" name="email" placeholder="Usuario">
                           </div>
                           <div class="form-group">
-                            <label for="exampleInputPassword1">Password</label>
+                            <label for="password">Password</label>
                             <input type="password" class="form-control" id="password" name="password" >
                           </div>
     
@@ -53,5 +64,5 @@ session_start();
       
 </section>
 
-
+</header><!-- /header -->
 <?php include ('../layouts/footer.php'); ?>
