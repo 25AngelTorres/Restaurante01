@@ -38,12 +38,15 @@
     <!-- Contact Form JavaScript -->
     <script src="../js/jqBootstrapValidation.js"></script>
     <script src="../js/contact_me.js"></script>
-
-    <!-- Custom Theme JavaScript -->
-    <script src="../js/agency.js"></script>
+    
 
     <!-- Custom Theme JavaScript -->
     <script src="../js/clean-blog.min.js"></script>
+    <script src="../js/agency.js"></script>
+
+    <!-- Bootstrap Validator --
+    <script type="text/javascript" src="../js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../js/bootstrapValidator.min.js"></script> -->
 
 </body>
 

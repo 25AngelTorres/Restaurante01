@@ -5,13 +5,6 @@
  */
 
 
-.banner_home {
-    width: 1400px;
-}
-
-
-
-
 body {
     overflow-x: hidden;
     font-family: "Roboto Slab","Helvetica Neue",Helvetica,Arial,sans-serif;
@@ -288,6 +281,19 @@ header .header_home{
     color: #fff;
     background-attachment: scroll;
     background-image: url(../img/header_home.png);
+    background-position: center center;
+    background-repeat: none;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+}
+
+.header_menu{
+    text-align: center;
+    color: #fff;
+    background-attachment: scroll;
+    background-image: url(../img/header_menu.jpg);
     background-position: center center;
     background-repeat: none;
     -webkit-background-size: cover;

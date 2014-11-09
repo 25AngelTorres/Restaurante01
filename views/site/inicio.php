@@ -13,13 +13,13 @@
                     <div id="carousel-example" class="carousel slide" data-ride="carousel">
                         <div class="carousel-inner">
                             <div class="item active">
-                                <img src="../img/1.jpg" alt="" />
+                                <img src="../img/2.jpg" alt="" />
                                     <div class="carousel-caption" >
                                         <h4 class="back-light">Primera opci&oacute;n.</h4>
                                     </div>
                             </div>
                             <div class="item ">
-                                <img src="../img/2.jpg" alt="" />
+                                <img src="../img/1.jpg" alt="" />
                                 <div class="carousel-caption ">
                                     <h4 class="back-light">Segunda opci&oacute;n.</h4>
                                 </div>
@@ -400,7 +400,7 @@
     <!-- Use the modals below to showcase details about your portfolio projects! -->
 
     <!-- Portfolio Modal 1 -->
-    <div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="menu-modal modal fade" id="menuModal1" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-content">
             <div class="close-modal" data-dismiss="modal">
                 <div class="lr">
