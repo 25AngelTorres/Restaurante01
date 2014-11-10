@@ -24,3 +24,25 @@ $('body').scrollspy({
 $('.navbar-collapse ul li a').click(function() {
     $('.navbar-toggle:visible').click();
 });
+
+
+$(document).ready(function() {
+	 /* Ocultar Formularios */
+            $('#form_reservations').hide();
+            $('#form_orders').hide();
+
+        /* Mostrar tablas a insertar */
+            $('#btn_orders').click(
+              function(){
+                $('#form_orders').show('slow');
+              }
+            );
+            
+            $('#btn_reservations').click(
+              function(){
+                $('#form_reservations').show('slow');
+              }
+            );
+
+
+});

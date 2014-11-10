@@ -65,7 +65,7 @@
                         <a href="<?php echo BASEURL ?>/views/menu/menu.php"><span class="glyphicon glyphicon-cutlery"></span> Men&uacute;</a>
                     </li>
                     <li>
-                        <a href=""><span class="glyphicon glyphicon-glass"></span> Service</a>
+                        <a href="<?php echo BASEURL ?>/views/service/service.php"><span class="glyphicon glyphicon-glass"></span> Service</a>
                     </li>
                     
                     <?php

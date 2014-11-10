@@ -1,3 +1,61 @@
+ <!-- Clients Aside -->
+    <aside class="clients">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 col-sm-6">
+                    <a href="#">
+                        
+                        <img src="../img/logos/pepsi.jpg" class="img-responsive img-centered" alt="">
+                        
+                    </a>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <a href="#">
+                        Marcas patrocinadoras
+                        <!--
+                        <img src="../img/logos/designmodo.jpg" class="img-responsive img-centered" alt="">
+                        -->
+                    </a>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <a href="#">
+                        Marcas patrocinadoras
+                        <!--
+                        <img src="../img/logos/themeforest.jpg" class="img-responsive img-centered" alt="">
+                        -->
+                    </a>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <a href="#">
+                        
+                        <img src="../img/logos/heineken.jpg" class="img-responsive img-centered" alt="">
+                        
+                    </a>
+                </div>
+            </div>
+        </div>
+    </aside>
+
+<!-- Mapa y ubicacion -->
+<section id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2 class="section-heading">Restaurant</h2>
+                    <h3 class="section-subheading text-muted">Direccion del establecimiento.</h3>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+        <!-- Responsive iFrame -->
+                    <div class="Flexible-container">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d3736.137145707163!2d-100.81302897436518!3d20.541568774373133!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses!2ses!4v1415570498028" width="100%" height="75%" frameborder="0" style="border:0"></iframe>
+                    </div>               
+                </div>
+            </div>
+        </div>
+    </section>
+
     <footer>
         <div class="container">
             <div class="row">
@@ -31,13 +89,13 @@
     <script src="../js/bootstrap.min.js"></script>
 
     <!-- Plugin JavaScript -->
-    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+    <script src="../js/jquery.easing.min.js"></script>
     <script src="../js/classie.js"></script>
     <script src="../js/cbpAnimatedHeader.js"></script>
 
-    <!-- Contact Form JavaScript -->
-    <script src="../js/jqBootstrapValidation.js"></script>
-    <script src="../js/contact_me.js"></script>
+    <!-- Contact Form JavaScript --
+    <script src="../js/jqBootstrapValidation.js"></script> 
+    <script src="../js/contact_me.js"></script> -->
     
 
     <!-- Custom Theme JavaScript -->

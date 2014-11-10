@@ -302,6 +302,46 @@ header .header_home{
     -o-background-size: cover;
 }
 
+.header_service{
+    text-align: center;
+    color: #fff;
+    background-attachment: scroll;
+    background-image: url(../img/header_service.jpg);
+    background-position: center center;
+    background-repeat: none;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+}
+
+.header_reservations{
+    text-align: center;
+    color: #fff;
+    background-attachment: scroll;
+    background-image: url(../img/header_reservations.jpg);
+    background-position: center center;
+    background-repeat: none;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+}
+
+.header_orders{
+    text-align: center;
+    color: #fff;
+    background-attachment: scroll;
+    background-image: url(../img/header_orders.jpg);
+    background-position: center center;
+    background-repeat: none;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+}
+
+
 header .intro-text {
     padding-top: 100px;
     padding-bottom: 50px;
@@ -887,4 +927,24 @@ img::-moz-selection {
 
 body {
     webkit-tap-highlight-color: #fed136;
+}
+
+/* Flexible iFrame */
+
+.Flexible-container {
+    position: relative;
+    padding-bottom: 56.25%;
+    padding-top: 30px;
+    height: 0;
+    overflow: hidden;
+}
+
+.Flexible-container iframe,   
+.Flexible-container object,  
+.Flexible-container embed {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    
 }

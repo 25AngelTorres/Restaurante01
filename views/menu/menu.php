@@ -35,7 +35,7 @@
                                 <i class="fa fa-plus fa-3x"></i>
                             </div>
                         </div>
-                        <img src="../img/portfolio/menu01.jpg" class="img-responsive" alt="">
+                        <img src="../img/menu/menu01.jpg" class="img-responsive" alt="">
                     </a>
                     <div class="portfolio-caption">
                         <h4>Fideo soba</h4>
@@ -50,7 +50,7 @@
                                 <i class="fa fa-plus fa-3x"></i>
                             </div>
                         </div>
-                        <img src="../img/portfolio/menu02.jpg" class="img-responsive" alt="">
+                        <img src="../img/menu/menu02.jpg" class="img-responsive" alt="">
                     </a>
                     <div class="portfolio-caption">
                         <h4>Conejo</h4>
@@ -66,7 +66,7 @@
                                 <i class="fa fa-plus fa-3x"></i>
                             </div>
                         </div>
-                        <img src="../img/portfolio/menu03.jpg" class="img-responsive" alt="">
+                        <img src="../img/menu/menu03.jpg" class="img-responsive" alt="">
                     </a>
                     <div class="portfolio-caption">
                         <h4>Risotto Di Brasato</h4>
@@ -81,7 +81,7 @@
                                 <i class="fa fa-plus fa-3x"></i>
                             </div>
                         </div>
-                        <img src="../img/portfolio/menu04.jpg" class="img-responsive" alt="">
+                        <img src="../img/menu/menu04.jpg" class="img-responsive" alt="">
                     </a>
                     <div class="portfolio-caption">
                         <h4>Flores</h4>
@@ -96,7 +96,7 @@
                                 <i class="fa fa-plus fa-3x"></i>
                             </div>
                         </div>
-                        <img src="../img/portfolio/menu05.jpg" class="img-responsive" alt="">
+                        <img src="../img/menu/menu05.jpg" class="img-responsive" alt="">
                     </a>
                     <div class="portfolio-caption">
                         <h4>Pollo</h4>
@@ -111,7 +111,7 @@
                                 <i class="fa fa-plus fa-3x"></i>
                             </div>
                         </div>
-                        <img src="../img/portfolio/menu06.jpg" class="img-responsive" alt="">
+                        <img src="../img/menu/menu06.jpg" class="img-responsive" alt="">
                     </a>
                     <div class="portfolio-caption">
                         <h4>Cazuela</h4>
@@ -142,7 +142,7 @@
                             <!-- Project Details Go Here -->
                             <h2>Fideo soba</h2>
                             <p class="item-intro text-muted">con at&uacute;n.</p>
-                            <img class="img-responsive" src="../img/portfolio/menu_01.jpg" alt="">
+                            <img class="img-responsive" src="../img/menu/menu_01.jpg" alt="">
                             <p><h3>Ingredientes</h3></p>
                             <p>
                                 nidos de noodles de trigo, 
@@ -175,7 +175,7 @@
                         <div class="modal-body">
                             <h2>Conejo</h2>
                             <p class="item-intro text-muted">Al pulque</p>
-                            <img class="img-responsive img-centered" src="../img/portfolio/menu_02.jpg" alt="">
+                            <img class="img-responsive img-centered" src="../img/menu/menu_02.jpg" alt="">
                             <p><h3>Ingredientes</h3></p>
                             <p>
                                 chile pasilla limpio, desvenado y asado, 
@@ -211,7 +211,7 @@
                             <!-- Project Details Go Here -->
                             <h2>Risotto</h2>
                             <p class="item-intro text-muted"> di Brasato du Vitello</p>
-                            <img class="img-responsive img-centered" src="../img/portfolio/menu_03.jpg" alt="">
+                            <img class="img-responsive img-centered" src="../img/menu/menu_03.jpg" alt="">
                             <p><h3>Ingredientes.</h3></p>
                             <p>
                                 cdta de cebolla, picada, 
@@ -251,7 +251,7 @@
                             <!-- Project Details Go Here -->
                             <h2>Flores</h2>
                             <p class="item-intro text-muted">rellenas.</p>
-                            <img class="img-responsive img-centered" src="../img/portfolio/menu_04.jpg" alt="">
+                            <img class="img-responsive img-centered" src="../img/menu/menu_04.jpg" alt="">
                             <p><h3>Ingredientes</h3></p>
                             <p>
                                 <strong>Mole de frijol: </strong> frijol, agua, ajo, cebolla. 
@@ -282,7 +282,7 @@
                             <!-- Project Details Go Here -->
                             <h2>Pollo</h2>
                             <p class="item-intro text-muted">al Coñac.</p>
-                            <img class="img-responsive img-centered" src="../img/portfolio/menu_05.jpg" alt="">
+                            <img class="img-responsive img-centered" src="../img/menu/menu_05.jpg" alt="">
                             <p><h3>Ingredientes.</h3></p>
                             <p>
                                 Presas de pollo sin piel, Sal, Pimienta Negra Molida Gourmet, Ajo en Polvo Gourmet, Orégano Entero Gourmet, 
@@ -312,7 +312,7 @@
                             <!-- Project Details Go Here -->
                             <h2>Cazuela</h2>
                             <p class="item-intro text-muted">de Vacuno.</p>
-                            <img class="img-responsive img-centered" src="../img/portfolio/menu_06.jpg" alt="">
+                            <img class="img-responsive img-centered" src="../img/menu/menu_06.jpg" alt="">
                             <p><h3>Ingredientes.</h3></p>
                             <p>
                                 Tapapecho o Asado de tira, Pimentón (picado en tiras), dientes de Ajo, Zanahoria (picada en tiras), 
