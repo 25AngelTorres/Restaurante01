@@ -13,19 +13,25 @@
                     <div id="carousel-example" class="carousel slide" data-ride="carousel">
                         <div class="carousel-inner">
                             <div class="item active">
+                                <a href="<?php echo BASEURL ?>/views/menu/menu.php" >
                                 <img src="../img/2.jpg" alt="" />
+                                </a>
                                     <div class="carousel-caption" >
                                         <h4 class="back-light">Primera opci&oacute;n.</h4>
                                     </div>
                             </div>
                             <div class="item ">
+                                <a href="#services">
                                 <img src="../img/1.jpg" alt="" />
+                                </a>
                                 <div class="carousel-caption ">
                                     <h4 class="back-light">Segunda opci&oacute;n.</h4>
                                 </div>
                             </div>
                             <div class="item ">
+                                <a href="<?php echo BASEURL ?>/views/service/service.php">
                                 <img src="../img/3.jpg" alt="" />
+                                </a>
                                 <div class="carousel-caption ">
                                     <h4 class="back-light">Tercera opci&oacute;n.</h4>
                                 </div>

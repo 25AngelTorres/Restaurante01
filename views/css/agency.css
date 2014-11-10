@@ -172,7 +172,7 @@ fieldset[disabled] .btn-xl.active {
 
 .navbar-default {
     border-color: transparent;
-    background-color: #222;
+    background-color: #2C0000;
 }
 
 .navbar-default .navbar-brand {
@@ -947,4 +947,11 @@ body {
     left: 0;
     width: 100%;
     
+}
+
+.form_delta{
+    padding-left: 20px;
+    padding-top: 20px;
+    padding-right: 20px;
+    padding-bottom: 20px;
 }

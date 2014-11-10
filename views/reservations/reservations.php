@@ -19,7 +19,7 @@
    
 <!-- About Section -->
     <section id="services">
-        <div class="container">
+        <div class="container" >
             <div class="row">
                 <div class="col-lg-12 text-center">
                     <h2 class="section-heading">Reservations</h2>
@@ -33,8 +33,92 @@
     </section>
 
     <section id="form_reservations" class="bg-darkest-gray">
-    	<div class="container bg-light-gray">
-    		Aqui va el formulario
+    	<div class="container bg-light-gray form_delta">
+    		<form>
+	    		<div class="row">
+	    			<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+	    				<h2>Ingresa los datos requeridos</h2>
+	    			</div>
+	    		</div>
+	    		<div class="row">
+	    			<div class="col-lg-4 col-lg-offset-2 col-md-10 col-md-offset-1">
+		    			<div class="form-group">
+		    				<hr>
+	                        <select name="mesa" >
+			    					<option value="">Selecciona Mesa</option>
+			    					<option value="">Mesa 1</option>
+			    					<option value="">Mesa 2</option>
+			    					<option value="">Mesa 3</option>
+			    					<option value="">Mesa 4</option>
+			    					<option value="">Mesa 5</option>
+			    					<option value="">Mesa 6</option>
+			    					<option value="">Mesa 7</option>
+			    					<option value="">Mesa 8</option>
+			    					<option value="">Mesa 9</option>
+			    					<option value="">Mesa 10</option>
+			    					<option value="">Mesa 11</option>
+			    					<option value="">Mesa 12</option>
+			    					<option value="">Mesa 13</option>
+			    					<option value="">Mesa 14</option>
+			    					<option value="">Mesa 15</option>
+			    					<option value="">Mesa 16</option>
+			    					<option value="">Mesa 17</option>
+			    					<option value="">Mesa 18</option>
+			    					<option value="">Mesa 19</option>
+			    					<option value="">Mesa 20</option>
+			    				</select>
+			    			<hr>
+			    			<select name="mesa" >
+			    					<option value="">N&uacute;mero de lugares</option>
+			    					<option value=""> 1</option>
+			    					<option value=""> 2</option>
+			    					<option value=""> 3</option>
+			    					<option value=""> 4</option>
+			    					<option value=""> 5</option>
+			    					<option value=""> 6</option>
+			    					<option value=""> 6 (2)</option>
+			    					<option value=""> 6 (3)</option>
+			    					<option value=""> 6 (4)</option>
+			    			</select>
+			    			<hr>
+			    			<input type="date" name="Fecha" value="" placeholder="fecha">
+			    			<hr>
+			    			<input type="time" name="Hora" value="" placeholder="hora">
+			    			<hr>
+
+	         			</div>	    				
+	    				
+	    			</div>
+	    			<div class="col-lg-4 col-lg-offset-2 col-md-10 col-md-offset-1">
+	    				<img src="../img/reservations/mesas.png" alt="" width="100%">
+	    			</div>
+	    		</div>
+	    		<div class="row">
+	    			<div class="col-lg-9 col-lg-offset-2 col-md-10 col-md-offset-1">
+	    				<h3>Datos personales</h3>
+	    				<hr>
+	    				<input type="text" name="Nombre" value="" placeholder="Nombre">
+	    				<hr>
+	    				<input type="text" name="CP" value="" placeholder="CP">
+	    				<hr>
+	    				<input type="text" name="Ciudad" value="" placeholder="Ciudad">
+	    				<hr>
+	    				<input type="text" name="Colonia" value="" placeholder="Colonia">
+	    				<hr>
+	    				<input type="text" name="Direccion" value="" placeholder="Direccion">
+	    				<hr>
+	    				<input type="tel" name="Telefono" value="" placeholder="Telefono">
+	    				<hr>
+	    				<input type="email" name="Email" value="" placeholder="Email">		
+	    				<hr>
+	    			</div>
+	    		</div>
+	    		<div class="row">
+	    			<div class="col-md-12" align="center">
+	    				<input type="submit" name="" value="Reservar" class="btn btn-xl">
+	    			</div>
+	    		</div>
+    		</form>
     	</div>
     </section>
 

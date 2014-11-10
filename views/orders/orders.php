@@ -31,7 +31,66 @@
     </section>
 
     <section id="form_orders" class="bg-darkest-gray">
-    	Aqui va el formulario
+    	<div class="container bg-light-gray form_delta">
+    		<form>
+	    		<div class="row">
+	    			<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+	    				<h2>Ingresa los datos requeridos</h2>
+	    			</div>
+	    		</div>
+	    		<div class="row">
+	    			<div class="col-lg-9 col-lg-offset-2 col-md-10 col-md-offset-1">
+	    				<h3>Platillo</h3>
+	    				<select name="Platillo" >
+	    					<option value="">Selecciona platillo</option>
+	    					<option value="">Platillo 1</option>
+	    					<option value="">Platillo 2</option>
+	    					<option value="">Platillo 3</option>
+	    					<option value="">Platillo 4</option>
+	    					<option value="">Platillo 5</option>
+	    					<option value="">Platillo 6</option>
+	    					<option value="">Platillo 7</option>
+	    					<option value="">Platillo 8</option>
+	    					<option value="">Platillo 9</option>
+	    				</select>
+	    				<hr>
+	    				<select name="Raciones" >
+	    					<option value="">Racion</option>
+	    					<option value="">1 Persona</option>
+	    					<option value="">2 Personas</option>
+	    					<option value="">3 Personas</option>
+	    					<option value="">4 Personas</option>
+	    					<option value="">5 Personas</option>
+	    				</select>
+	    			</div>
+	    		</div>
+	    		<div class="row">
+	    			<div class="col-lg-9 col-lg-offset-2 col-md-10 col-md-offset-1">
+	    				<h3>Datos personales</h3>
+	    				<hr>
+	    				<input type="text" name="Nombre" value="" placeholder="Nombre">
+	    				<hr>
+	    				<input type="text" name="CP" value="" placeholder="CP">
+	    				<hr>
+	    				<input type="text" name="Ciudad" value="" placeholder="Ciudad">
+	    				<hr>
+	    				<input type="text" name="Colonia" value="" placeholder="Colonia">
+	    				<hr>
+	    				<input type="text" name="Direccion" value="" placeholder="Direccion">
+	    				<hr>
+	    				<input type="tel" name="Telefono" value="" placeholder="Telefono">
+	    				<hr>
+	    				<input type="email" name="Email" value="" placeholder="Email">		
+	    				<hr>
+	    			</div>
+	    		</div>
+	    		<div class="row">
+	    			<div class="col-md-12" align="center">
+	    				<input type="submit" name="" value="Ordenar" class="btn btn-xl">
+	    			</div>
+	    		</div>
+    		</form>
+    	</div>
     </section>
 
     <section>
