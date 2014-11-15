@@ -99,7 +99,6 @@
     
 
     <!-- Custom Theme JavaScript -->
-    <script src="../js/clean-blog.min.js"></script>
     <script src="../js/agency.js"></script>
 
     <!-- Bootstrap Validator --

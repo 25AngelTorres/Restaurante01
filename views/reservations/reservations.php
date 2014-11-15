@@ -12,7 +12,7 @@
         <div class="container" >
             <div class="intro-text">
                 <div class="intro-heading">Reserva tu lugar con nosotros!</div>
-                <a href="#services" class="page-scroll btn btn-xl">Resrvaci&oacute;n</a>
+                <a href="#services" class="page-scroll btn btn-xl">Reservaci&oacute;n</a>
             </div>
         </div>
     </header>
@@ -44,7 +44,7 @@
 	    			<div class="col-lg-4 col-lg-offset-2 col-md-10 col-md-offset-1">
 		    			<div class="form-group">
 		    				<hr>
-	                        <select name="mesa" >
+	                        <select name="mesa" class="form-control">
 			    					<option value="">Selecciona Mesa</option>
 			    					<option value="">Mesa 1</option>
 			    					<option value="">Mesa 2</option>
@@ -68,7 +68,7 @@
 			    					<option value="">Mesa 20</option>
 			    				</select>
 			    			<hr>
-			    			<select name="mesa" >
+			    			<select name="mesa" class="form-control">
 			    					<option value="">N&uacute;mero de lugares</option>
 			    					<option value=""> 1</option>
 			    					<option value=""> 2</option>
@@ -81,35 +81,34 @@
 			    					<option value=""> 6 (4)</option>
 			    			</select>
 			    			<hr>
-			    			<input type="date" name="Fecha" value="" placeholder="fecha">
+			    			<input type="date" name="Fecha" value="" placeholder="fecha" class="form-control">
 			    			<hr>
-			    			<input type="time" name="Hora" value="" placeholder="hora">
+			    			<input type="time" name="Hora" value="" placeholder="hora" class="form-control">
 			    			<hr>
-
 	         			</div>	    				
 	    				
 	    			</div>
 	    			<div class="col-lg-4 col-lg-offset-2 col-md-10 col-md-offset-1">
-	    				<img src="../img/reservations/mesas.png" alt="" width="100%">
+	    				<img src="../img/reservations/mesas.png" alt="" width="100%" class="img-thumbnail">
 	    			</div>
 	    		</div>
 	    		<div class="row">
 	    			<div class="col-lg-9 col-lg-offset-2 col-md-10 col-md-offset-1">
 	    				<h3>Datos personales</h3>
 	    				<hr>
-	    				<input type="text" name="Nombre" value="" placeholder="Nombre">
+	    				<input type="text" name="Nombre" value="" placeholder="Nombre" class="form-control">
 	    				<hr>
-	    				<input type="text" name="CP" value="" placeholder="CP">
+	    				<input type="text" name="Direccion" value="" placeholder="Direccion" class="form-control">
 	    				<hr>
-	    				<input type="text" name="Ciudad" value="" placeholder="Ciudad">
+	    				<input type="text" name="CP" value="" placeholder="CP" class="form-control">
 	    				<hr>
-	    				<input type="text" name="Colonia" value="" placeholder="Colonia">
+	    				<input type="text" name="Ciudad" value="" placeholder="Ciudad" class="form-control">
 	    				<hr>
-	    				<input type="text" name="Direccion" value="" placeholder="Direccion">
+	    				<input type="text" name="Colonia" value="" placeholder="Colonia" class="form-control">
 	    				<hr>
-	    				<input type="tel" name="Telefono" value="" placeholder="Telefono">
+	    				<input type="tel" name="Telefono" value="" placeholder="Telefono" class="form-control">
 	    				<hr>
-	    				<input type="email" name="Email" value="" placeholder="Email">		
+	    				<input type="email" name="Email" value="" placeholder="Email" class="form-control">
 	    				<hr>
 	    			</div>
 	    		</div>

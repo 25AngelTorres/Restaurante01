@@ -11,10 +11,12 @@ session_start();
 
       $login = new LoginController();
       if (isset($_POST['email'])) {
+        /*
           echo "<pre>";
           print_r($_POST);
           echo "</pre>";
           die();
+        */
 
         $login->validaUsuario($_POST);
       }

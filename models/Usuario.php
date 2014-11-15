@@ -40,14 +40,14 @@ class Usuario extends Modelo{
         $er = new Er();
         
         if ( !$er->valida_email($valor) ){
-            $this->errores[] = "Este e-mail (".$valor.") no es valido";
+            $this->errores[] = "Este usuario (".$valor.") no es valido";
         }
 
         $rs = $this->consulta_sql("select * from usuarios where email = '$valor'");
         $rows = $rs->GetArray();
         
         if(count($rows) > 0){
-            $this->errores[] = "Este e-mail (".$valor.") ya esta registrado"; 
+            $this->errores[] = "Este usuario (".$valor.") ya esta registrado"; 
         }else{
             $this->email = trim($valor);
         }

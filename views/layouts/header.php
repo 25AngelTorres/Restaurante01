@@ -69,6 +69,11 @@
                     </li>
                     
                     <?php
+                        if (isset($_SESSION['user'])) {
+                            echo '<li class="page-scroll">
+                            <a href="'.BASEURL.'/views/administration/administration.php"><span class="glyphicon glyphicon-off"></span> Administration</a>
+                            </li>';
+                        }
                         if (!isset($_SESSION['user'])) {
                             echo '<li class="page-scroll">
                             <a href="'.BASEURL.'/views/site/login.php"><span class="glyphicon glyphicon-user"></span> Login</a>
