@@ -26,7 +26,12 @@ Contine las clases
 
 
 			$this->set_costo($datos['costo_reservacion']);
-			$this->set_cliente($datos['nombre_cliente']);   
+			
+			//Para obtener el último cliente que reservo
+			$rs = $this->consulta_sql("SELECT MAX(Id_cte) AS id FROM cliente");
+			$rows = $rs->GetArray();
+
+			$this->set_cliente($rows['0']['id']);
 			
 			//Verificar si existen errores
 			if(count ($this->errores)>0){

@@ -27,10 +27,11 @@ $ClienteC = new ClienteController();
 $ReservacionC = new ReservacionController();
 $ReservacionesC = new ReservacionesController();
  if(isset($_POST['Fecha_reservaciones']) && isset($_POST['nombre_cliente']))  {
-    echo "<pre>";
+    
+    /*echo "<pre>";
       print_r($_POST);
     echo "</pre>";
-    die();
+    //die();*/
     
     $ClienteC -> inserta_cliente($_POST);
     $ReservacionesC->inserta_reservaciones($_POST);

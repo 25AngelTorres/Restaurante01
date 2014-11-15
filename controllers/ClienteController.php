@@ -75,5 +75,13 @@ Contine las clases
 	         return $dropDown;
 	    }
 
+	    public function consulta_id(){
+	    	$rs = $this->consulta_sql("SELECT MAX(Id_cte) AS id FROM cliente");
+			$rows = $rs->GetArray();
+			 //print_r($rows['0']['id']);
+			return $rows['0']['id'];
+	    }
+
+
 	}
 ?>
