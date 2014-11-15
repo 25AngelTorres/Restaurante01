@@ -11,6 +11,7 @@ class Cliente extends Modelo{
 		'Colonia'=>array(),
 		'Direccion'=>array(),
 		'Telefono'=>array(),
+        'Email'=>array(),
     );
     
     public $errores = array( );
@@ -21,6 +22,7 @@ class Cliente extends Modelo{
 	private $Colonia;
 	private $Direccion;
 	private $Telefono;
+    private $Email;
 
        
     
@@ -38,23 +40,23 @@ class Cliente extends Modelo{
     
     
     public function get_nombre(){
-        return $this->sube;
+        return $this->Nombre;
     } 
 
     public function set_nombre($valor){
-		$this->Tipo = $valor;
+		$this->Nombre = $valor;
     }
 
     public function get_cp(){
-        return $this->baja;
+        return $this->CP;
     }
     
     public function set_cp($valor){
-        $this->Descripcion = $valor;
+        $this->CP = $valor;
     }
     
     public function get_ciudad(){
-        return $this->baja;
+        return $this->Ciudad;
     }
     
     public function set_ciudad($valor){
@@ -62,7 +64,7 @@ class Cliente extends Modelo{
     }
 	
 	public function get_colonia(){
-        return $this->baja;
+        return $this->Colonia;
     }
     
     public function set_colonia($valor){
@@ -70,7 +72,7 @@ class Cliente extends Modelo{
     }
 	
 	public function get_direccion(){
-        return $this->baja;
+        return $this->Direccion;
     }
     
     public function set_direccion($valor){
@@ -78,11 +80,19 @@ class Cliente extends Modelo{
     }
 	
 	public function get_telefono(){
-        return $this->baja;
+        return $this->Telefono;
     }
     
     public function set_telefono($valor){
         $this->Telefono = $valor;
+    }
+    
+    public function get_email(){
+        return $this->Email;
+    }
+
+    public function set_email($valor){
+        $this->Email = $valor;
     }
     
 }

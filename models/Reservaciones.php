@@ -36,7 +36,7 @@ class Reservaciones extends Modelo{
     
     
     public function get_fecha(){
-        return $this->sube;
+        return $this->Fecha;
     } 
 
     public function set_fecha($valor){
@@ -44,7 +44,7 @@ class Reservaciones extends Modelo{
     }
 
     public function get_hora(){
-        return $this->baja;
+        return $this->Hora;
     }
     
     public function set_hora($valor){
@@ -52,7 +52,7 @@ class Reservaciones extends Modelo{
     }
 	
 	public function get_mesa(){
-        return $this->baja;
+        return $this->Mesa;
     }
     
     public function set_mesa($valor){
@@ -60,7 +60,7 @@ class Reservaciones extends Modelo{
     }
 	
 	public function get_nasientos(){
-        return $this->baja;
+        return $this->No_asientos;
     }
     
     public function set_nasientos($valor){

@@ -22,7 +22,7 @@ class Mesas extends Modelo{
     
     public function get_atributos(){
         $rs = array();
-        foreach ($this->atributos as $key => $value) {
+            foreach ($this->atributos as $key => $value) {
             $rs[$key]=$this->$key;
         }
         return $rs;
@@ -30,7 +30,7 @@ class Mesas extends Modelo{
     
     
     public function get_nombre(){
-        return $this->sube;
+        return $this->Nombre;
     } 
 
     public function set_nombre($valor){
@@ -38,7 +38,7 @@ class Mesas extends Modelo{
     }
 
     public function get_precio(){
-        return $this->baja;
+        return $this->Precio;
     }
     
     public function set_precio($valor){

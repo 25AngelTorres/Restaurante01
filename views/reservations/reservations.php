@@ -1,11 +1,70 @@
 
 <?php 
+	
+
   session_start();
+  //VISTA PRIVADAinclude ('../../libs/security.php');
   include ('../layouts/header.php');
+
+  include ('../../libs/adodb5/adodb-pager.inc.php');
+  include ('../../libs/adodb5/adodb.inc.php');
+  include ('../../models/Conexion.php');
+  include ('../../models/Modelo.php');
+  include ('../../models/Mesas.php');					//Archivo independiente a cada tabla
+  include ('../../models/Reservaciones.php');					//Archivo independiente a cada tabla
+  include ('../../models/Cliente.php');					//Archivo independiente a cada tabla
+  include ('../../models/Reservacion.php');					//Archivo independiente a cada tabla
+  include ('../../controllers/ReservacionesController.php');
+  include ('../../controllers/MesasController.php');
+  include ('../../controllers/ClienteController.php');
+  include ('../../controllers/ReservacionController.php');
+  include ('../../libs/Er.php');
+  
+  
+//Inicializar el controlador
+$MesasC = new MesasController();
+$ClienteC = new ClienteController();
+$ReservacionC = new ReservacionController();
+$ReservacionesC = new ReservacionesController();
+ if(isset($_POST['Fecha_reservaciones']) && isset($_POST['nombre_cliente']))  {
+    echo "<pre>";
+      print_r($_POST);
+    echo "</pre>";
+    die();
+    
+    $ClienteC -> inserta_cliente($_POST);
+    $ReservacionesC->inserta_reservaciones($_POST);
+    $ReservacionC -> insertar_reservacion($_POST);
+
+  }
+ 
 
 
 ?>
 
+<script type="text/javascript">
+	var precio_m = 0;
+	var precio_t = 0;
+	var precio_l= 1
+    function updatevariable(data) { 
+        precio_m = data;
+        precio_t = precio_l*precio_m;
+        //alert(precio_m);
+        var input = document.getElementById("precioTotal");//.valueOf() = "$ "+precio_t+" mxn";
+        input.placeholder = "$ "+precio_t+" mxn";
+        input.value= precio_t ;
+    }
+    function updateprecio(data){
+    	precio_l = data;
+        precio_t = precio_l*precio_m;
+    	//alert(precio_t);
+	    var input = document.getElementById("precioTotal");//.valueOf() = "$ "+precio_t+" mxn";
+        input.placeholder = "$ "+precio_t+" mxn";
+        input.value= precio_t ;
+	}
+	window.onload = precioTotal;
+
+</script>
 
 <!-- Header -->
     <header class="header_reservations">
@@ -34,7 +93,7 @@
 
     <section id="form_reservations" class="bg-darkest-gray">
     	<div class="container bg-light-gray form_delta">
-    		<form>
+    		<form class="form-horizontal" role="form" id="registerForm" method="POST" enctype="multipart/form-data">
 	    		<div class="row">
 	    			<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
 	    				<h2>Ingresa los datos requeridos</h2>
@@ -44,47 +103,31 @@
 	    			<div class="col-lg-4 col-lg-offset-2 col-md-10 col-md-offset-1">
 		    			<div class="form-group">
 		    				<hr>
-	                        <select name="mesa" class="form-control">
-			    					<option value="">Selecciona Mesa</option>
-			    					<option value="">Mesa 1</option>
-			    					<option value="">Mesa 2</option>
-			    					<option value="">Mesa 3</option>
-			    					<option value="">Mesa 4</option>
-			    					<option value="">Mesa 5</option>
-			    					<option value="">Mesa 6</option>
-			    					<option value="">Mesa 7</option>
-			    					<option value="">Mesa 8</option>
-			    					<option value="">Mesa 9</option>
-			    					<option value="">Mesa 10</option>
-			    					<option value="">Mesa 11</option>
-			    					<option value="">Mesa 12</option>
-			    					<option value="">Mesa 13</option>
-			    					<option value="">Mesa 14</option>
-			    					<option value="">Mesa 15</option>
-			    					<option value="">Mesa 16</option>
-			    					<option value="">Mesa 17</option>
-			    					<option value="">Mesa 18</option>
-			    					<option value="">Mesa 19</option>
-			    					<option value="">Mesa 20</option>
-			    				</select>
+		    				<label>Mesa:</label>
+		    				                              <!-- $id_tabla,	$nombre_columna,	$tabla,			$name,			$id,			$where = ' ' -->
+                        	<?php echo $MesasC->getDropDown('Id_mesa',		'Nombre',				'mesas',	'nombre_mesas',	'nombre' ); ?>
+
 			    			<hr>
-			    			<select name="mesa" class="form-control">
-			    					<option value="">N&uacute;mero de lugares</option>
-			    					<option value=""> 1</option>
-			    					<option value=""> 2</option>
-			    					<option value=""> 3</option>
-			    					<option value=""> 4</option>
-			    					<option value=""> 5</option>
-			    					<option value=""> 6</option>
-			    					<option value=""> 6 (2)</option>
-			    					<option value=""> 6 (3)</option>
-			    					<option value=""> 6 (4)</option>
+			    			<select class="form-control" onchange="updateprecio(this.value)" name="No_asientos_reservaciones">
+			    					<option value="1">N&uacute;mero de lugares</option>
+			    					<option value="1"> 1</option>
+			    					<option value="2"> 2</option>
+			    					<option value="3"> 3</option>
+			    					<option value="4"> 4</option>
+			    					<option value="5"> 5</option>
+			    					<option value="6"> 6</option>
+			    					<option value="6"> 6 (2)</option>
+			    					<option value="6"> 6 (3)</option>
+			    					<option value="6"> 6 (4)</option>
 			    			</select>
 			    			<hr>
-			    			<input type="date" name="Fecha" value="" placeholder="fecha" class="form-control">
+			    			<label>Costo: $ <input id="precioTotal" type="text" readonly="readonly" class="form-control" name="costo_reservacion"> </label>
 			    			<hr>
-			    			<input type="time" name="Hora" value="" placeholder="hora" class="form-control">
+			    			<input type="date" name="Fecha_reservaciones" value="" placeholder="fecha" class="form-control">
 			    			<hr>
+			    			<input type="time" name="Hora_reservaciones" value="" placeholder="hora" class="form-control">
+			    			<hr>
+			    			
 	         			</div>	    				
 	    				
 	    			</div>
@@ -96,19 +139,19 @@
 	    			<div class="col-lg-9 col-lg-offset-2 col-md-10 col-md-offset-1">
 	    				<h3>Datos personales</h3>
 	    				<hr>
-	    				<input type="text" name="Nombre" value="" placeholder="Nombre" class="form-control">
+	    				<input type="text" name="nombre_cliente" value="" placeholder="Nombre" class="form-control">
 	    				<hr>
-	    				<input type="text" name="Direccion" value="" placeholder="Direccion" class="form-control">
+	    				<input type="text" name="direccion_cliente" value="" placeholder="Direccion" class="form-control">
 	    				<hr>
-	    				<input type="text" name="CP" value="" placeholder="CP" class="form-control">
+	    				<input type="text" name="cp_cliente" value="" placeholder="CP" class="form-control">
 	    				<hr>
-	    				<input type="text" name="Ciudad" value="" placeholder="Ciudad" class="form-control">
+	    				<input type="text" name="ciudad_cliente" value="" placeholder="Ciudad" class="form-control">
 	    				<hr>
-	    				<input type="text" name="Colonia" value="" placeholder="Colonia" class="form-control">
+	    				<input type="text" name="colonia_cliente" value="" placeholder="Colonia" class="form-control">
 	    				<hr>
-	    				<input type="tel" name="Telefono" value="" placeholder="Telefono" class="form-control">
+	    				<input type="tel" name="telefono_cliente" value="" placeholder="Telefono" class="form-control">
 	    				<hr>
-	    				<input type="email" name="Email" value="" placeholder="Email" class="form-control">
+	    				<input type="email" name="email_cliente" value="" placeholder="Email" class="form-control">
 	    				<hr>
 	    			</div>
 	    		</div>

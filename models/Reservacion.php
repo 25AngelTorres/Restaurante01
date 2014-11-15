@@ -6,14 +6,14 @@ class Reservacion extends Modelo{
     
     public $atributos = array(
         'Cliente'=>array(),
-        'Saldo'=>array(),
+        'Costo'=>array(),
 
     );
     
     public $errores = array( );
     
     private $Cliente;
-    private $Saldo;
+    private $Costo;
 
 
        
@@ -32,19 +32,19 @@ class Reservacion extends Modelo{
     
     
     public function get_cliente(){
-        return $this->sube;
+        return $this->Cliente;
     } 
 
     public function set_cliente($valor){
 		$this->Cliente = $valor;
     }
 
-    public function get_saldo(){
-        return $this->baja;
+    public function get_costo(){
+        return $this->Costo;
     }
     
-    public function set_saldo($valor){
-        $this->Saldo = $valor;
+    public function set_costo($valor){
+        $this->Costo = $valor;
     }
 
     

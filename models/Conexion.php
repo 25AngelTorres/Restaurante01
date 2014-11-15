@@ -10,7 +10,7 @@ class Conexion {
         $this->db = ADONewConnection('mysqli');
         $this->db->debug = false;
 			       //ip     user      pass    bd
-        $this->db->Connect('localhost','delta','delta','deltarestaurant');
+        $this->db->Connect('localhost','delta','delta','restaurant');
 
     }   
 }

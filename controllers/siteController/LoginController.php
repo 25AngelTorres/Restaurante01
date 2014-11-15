@@ -10,7 +10,7 @@ Contine las clases
 			 parent::Usuario();
 		}
 		public function validaUsuario($datos){
-			$rs = $this->consulta_sql(" select * from usuarios where email = '".$datos['email']."'  ");
+			$rs = $this->consulta_sql(" select * from usuario where email = '".$datos['email']."'  ");
         	$rows = $rs->GetArray();
         	if(count($rows) > 0){
         		if ($rows['0']['password']== md5($datos['password'])) {
@@ -26,8 +26,8 @@ Contine las clases
 
 		}
 		public function iniciarSesion($rol,$email){
-			$_SESSION['user'] = $rol;
-			$_SESSION['email'] = $email;
+			$_SESSION['rol'] = $rol;
+			$_SESSION['usuario'] = $email;
 			header("Location: inicio.php");
 		}
 
