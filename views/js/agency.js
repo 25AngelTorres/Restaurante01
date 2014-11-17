@@ -30,6 +30,9 @@ $(document).ready(function() {
 	 /* Ocultar Formularios */
             $('#form_reservations').hide();
             $('#form_orders').hide();
+            $('#desayuno').hide();
+            $('#gourmet').hide();
+            $('#mexicana').hide();
 
         /* Mostrar tablas a insertar */
             $('#btn_orders').click(
@@ -41,6 +44,31 @@ $(document).ready(function() {
             $('#btn_reservations').click(
               function(){
                 $('#form_reservations').show('slow');
+              }
+            );
+
+            $('#linkdesayuno').click(
+              function(){
+                $('#desayuno').hide();
+                $('#gourmet').hide();
+                $('#mexicana').hide();
+                $('#desayuno').show('slow');
+              }
+            );
+            $('#linkgourmet').click(
+              function(){
+                $('#desayuno').hide();
+                $('#gourmet').hide();
+                $('#mexicana').hide();
+                $('#gourmet').show('slow');
+              }
+            );
+            $('#linkmexicana').click(
+              function(){
+                $('#desayuno').hide();
+                $('#gourmet').hide();
+                $('#mexicana').hide();
+                $('#mexicana').show('slow');
               }
             );
 

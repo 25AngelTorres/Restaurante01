@@ -61,12 +61,22 @@ Contine las clases
 	         $dropDown = '<select class="form-control" id="'.$id.'" name="'.$name.'" onchange="updatevariable(this.value)">
 	                        <option value="">Selecciona de la lista </option>';
 	         foreach ($rows as $key => $value) {
-	         	$Precio = $value['Precio'];
+	         	$Precio = $value['Id_mesa'];
 	            $dropDown.= '<option value="'.$Precio.'">'.utf8_encode($value[$nombre_columna]).'</option>';
 	            
 	         }
 	         $dropDown.= '</select>'; 
 	         return $dropDown;
+	    }
+
+	    public function precioMesa($id){
+	    	$rs = $this->consulta_sql(' select Precio from mesas where = Id_mesa = "'.$id.'"');
+	    	$rows = $rs->GetArray();
+	    	$Precio = $rows['0']['Precio'];
+
+	    	print_r($Precio);
+	    	die();
+	    	return $Precio;
 	    }
 
 	}

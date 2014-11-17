@@ -47,10 +47,14 @@ $ReservacionesC = new ReservacionesController();
 	var precio_m = 0;
 	var precio_t = 0;
 	var precio_l= 1
+  var id_mes=0;
     function updatevariable(data) { 
-        precio_m = data;
+        precio_m=data;
         precio_t = precio_l*precio_m;
         //alert(precio_m);
+        var inputM = document.getElementById("precioMesa");//.valueOf() = "$ "+precio_t+" mxn";
+        inputM.placeholder = "$ "+precio_m+" mxn";
+        inputM.value= precio_m ;
         var input = document.getElementById("precioTotal");//.valueOf() = "$ "+precio_t+" mxn";
         input.placeholder = "$ "+precio_t+" mxn";
         input.value= precio_t ;
@@ -107,7 +111,7 @@ $ReservacionesC = new ReservacionesController();
 		    				<label>Mesa:</label>
 		    				                              <!-- $id_tabla,	$nombre_columna,	$tabla,			$name,			$id,			$where = ' ' -->
                         	<?php echo $MesasC->getDropDown('Id_mesa',		'Nombre',				'mesas',	'nombre_mesas',	'nombre' ); ?>
-
+                <label>Costo por lugar: $ <input id="precioMesa" type="text" readonly="readonly" class="form-control"> </label>
 			    			<hr>
 			    			<select class="form-control" onchange="updateprecio(this.value)" name="No_asientos_reservaciones">
 			    					<option value="1">N&uacute;mero de lugares</option>
@@ -122,7 +126,7 @@ $ReservacionesC = new ReservacionesController();
 			    					<option value="6"> 6 (4)</option>
 			    			</select>
 			    			<hr>
-			    			<label>Costo: $ <input id="precioTotal" type="text" readonly="readonly" class="form-control" name="costo_reservacion"> </label>
+			    			<label>Total: $ <input id="precioTotal" type="text" readonly="readonly" class="form-control" name="costo_reservacion"> </label>
 			    			<hr>
 			    			<input type="date" name="Fecha_reservaciones" value="" placeholder="fecha" class="form-control">
 			    			<hr>

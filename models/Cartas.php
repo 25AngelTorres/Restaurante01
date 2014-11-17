@@ -30,7 +30,7 @@ class Cartas extends Modelo{
     
     
     public function get_tipo(){
-        return $this->sube;
+        return $this->Tipo;
     } 
 
     public function set_tipo($valor){
@@ -38,7 +38,7 @@ class Cartas extends Modelo{
     }
 
     public function get_descripcion(){
-        return $this->baja;
+        return $this->Descripcion;
     }
     
     public function set_password($valor){
