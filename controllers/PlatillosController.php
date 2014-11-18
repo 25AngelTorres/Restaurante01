@@ -57,19 +57,20 @@ Contine las clases
 		}
 
 		//Generar select
-	    public function getDropDown($id_tabla,$nombre_columna,$tabla,$name,$id, $where = ' '){
+	    public function getDropDown($id_tabla,$nombre_columna,$tabla,$name,$id, $onchange, $where = ' '){
 	         $rs = $this->consulta_sql(" select * from $tabla ".$where);
 	         $rows = $rs->GetArray();
-	         $dropDown = '<select class="form-control" id="'.$id.'" name="'.$name.'" onchange="updatevariable(this.value)">
-	                        <option value="">Selecciona de la lista </option>';
+	         $dropDown = '<select class="form-control" id="'.$id.'" name="'.$name.'" onchange="update'.$onchange.'this.value)">
+	                        <option value="0">Selecciona de la lista </option>';
 	         foreach ($rows as $key => $value) {
-	         	$Precio = $value['Id_mesa'];
+	         	$Precio = $value[$id_tabla];
 	            $dropDown.= '<option value="'.$Precio.'">'.utf8_encode($value[$nombre_columna]).'</option>';
 	            
 	         }
 	         $dropDown.= '</select>'; 
 	         return $dropDown;
 	    }
+
 
 	    public function muestraPlatillos ($tipo)
 	    {

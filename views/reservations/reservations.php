@@ -111,7 +111,9 @@ $ReservacionesC = new ReservacionesController();
 		    				<label>Mesa:</label>
 		    				                              <!-- $id_tabla,	$nombre_columna,	$tabla,			$name,			$id,			$where = ' ' -->
                         	<?php echo $MesasC->getDropDown('Id_mesa',		'Nombre',				'mesas',	'nombre_mesas',	'nombre' ); ?>
-                <label>Costo por lugar: $ <input id="precioMesa" type="text" readonly="readonly" class="form-control"> </label>
+                <label>Costo por lugar: $ <input id="precioMesa" type="text" readonly="readonly"
+                class="form-control"  >
+                </label>
 			    			<hr>
 			    			<select class="form-control" onchange="updateprecio(this.value)" name="No_asientos_reservaciones">
 			    					<option value="1">N&uacute;mero de lugares</option>

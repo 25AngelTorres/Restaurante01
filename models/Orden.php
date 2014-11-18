@@ -32,7 +32,7 @@ class Orden extends Modelo{
     
     
     public function get_cliente(){
-        return $this->sube;
+        return $this->Cliente;
     } 
 
     public function set_cliente($valor){
@@ -40,7 +40,7 @@ class Orden extends Modelo{
     }
 
     public function get_pedido(){
-        return $this->baja;
+        return $this->Pedido;
     }
     
     public function set_pedido($valor){
@@ -48,7 +48,7 @@ class Orden extends Modelo{
     }
 	
 	public function get_saldo(){
-        return $this->baja;
+        return $this->Saldo;
     }
     
     public function set_saldo($valor){

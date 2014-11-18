@@ -36,7 +36,7 @@ class Platillos extends Modelo{
     
     
     public function get_tipo(){
-        return $this->sube;
+        return $this->Tipo;
     } 
 
     public function set_tipo($valor){
@@ -44,7 +44,7 @@ class Platillos extends Modelo{
     }
 
     public function get_nombre(){
-        return $this->baja;
+        return $this->Nombre;
     }
     
     public function set_nombre($valor){
@@ -52,7 +52,7 @@ class Platillos extends Modelo{
     }
 	
 	public function get_descripcion(){
-        return $this->baja;
+        return $this->Descripcion;
     }
     
     public function set_descripcion($valor){
@@ -60,7 +60,7 @@ class Platillos extends Modelo{
     }
 	
 	public function get_precio(){
-        return $this->baja;
+        return $this->Precio;
     }
     
     public function set_precio($valor){
