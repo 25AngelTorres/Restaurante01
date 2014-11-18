@@ -9,7 +9,8 @@ class Reservaciones extends Modelo{
         'Hora'=>array(),
 		'Mesa'=>array(),
 		'No_asientos'=>array(),
-
+        'Costo'=>array(),
+        'Cliente'=>array(),
     );
     
     public $errores = array( );
@@ -18,6 +19,8 @@ class Reservaciones extends Modelo{
     private $Hora;
 	private $Mesa;
 	private $No_asientos;
+    private $Costo;
+    private $Cliente;
 
 
        
@@ -67,7 +70,21 @@ class Reservaciones extends Modelo{
         $this->No_asientos = $valor;
     }
 
+    public function get_cliente(){
+        return $this->Cliente;
+    } 
+
+    public function set_cliente($valor){
+        $this->Cliente = $valor;
+    }
+
+    public function get_costo(){
+        return $this->Costo;
+    }
     
+    public function set_costo($valor){
+        $this->Costo = $valor;
+    }    
     
 }
 ?>

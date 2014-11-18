@@ -29,6 +29,8 @@ Contine las clases
 			$this->set_hora($datos['Hora_reservaciones']);
 			//$this->set_mesa($datos['mesa']);   <--no e podido insertar esto :(
 			$this->set_nasientos($datos['No_asientos_reservaciones']);
+			$this->set_cliente($datos['cliente']);
+			$this->set_costo($datos['costo']);
 			
 			//Verificar si existen errores
 			if(count ($this->errores)>0){

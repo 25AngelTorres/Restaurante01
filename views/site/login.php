@@ -8,7 +8,6 @@ session_start();
       include ('../../controllers/siteController/LoginController.php');
       include ('../../libs/Er.php');
      
-
       $login = new LoginController();
       if (isset($_POST['email'])) {
         /*

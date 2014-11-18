@@ -15,23 +15,19 @@ Contine las clases
 		//Funcion para insertar una mesa
 		public function inserta_reservacion($datos){
 			//Solo es para acegurarse que se estan enviando los archivos
-		    /*echo "<pre>";
+		    echo "<pre>";
 		      print_r($datos);
 		      echo   'Desde Controller Reservacion';
 
 		    echo "</pre>";
-		    die();*/
+		    
 			//Conexion con Equipo el cual continene Modelo y Conexion
 			//$status=new Status();
 
 
 			$this->set_costo($datos['costo_reservacion']);
-			
-			//Para obtener el último cliente que reservo
-			$rs = $this->consulta_sql("SELECT MAX(Id_cte) AS id FROM cliente");
-			$rows = $rs->GetArray();
 
-			$this->set_cliente($rows['0']['id']);
+			$this->set_cliente($datos['cliente']);
 			
 			//Verificar si existen errores
 			if(count ($this->errores)>0){

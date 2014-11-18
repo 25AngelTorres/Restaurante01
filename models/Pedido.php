@@ -32,7 +32,7 @@ class Pedido extends Modelo{
     
     
     public function get_platillo(){
-        return $this->sube;
+        return $this->Platillo;
     } 
 
     public function set_platillo($valor){
@@ -40,14 +40,12 @@ class Pedido extends Modelo{
     }
 
     public function get_raciones(){
-        return $this->baja;
+        return $this->Raciones;
     }
     
     public function set_raciones($valor){
         $this->Raciones = $valor;
     }
 
-    
-    
 }
 ?>

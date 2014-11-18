@@ -26,20 +26,48 @@ $MesasC = new MesasController();
 $ClienteC = new ClienteController();
 $ReservacionC = new ReservacionController();
 $ReservacionesC = new ReservacionesController();
- if(isset($_POST['Fecha_reservaciones']) && isset($_POST['nombre_cliente']))  {
+ if(isset($_POST['nombre_cliente'])
+    && isset($_POST['direccion_cliente'])
+    && isset($_POST['cp_cliente'])
+    && isset($_POST['ciudad_cliente'])
+    && isset($_POST['colonia_cliente'])
+    && isset($_POST['telefono_cliente'])
+    && isset($_POST['email_cliente'])
+    )  {
     
     /*echo "<pre>";
-      print_r($_POST);
+      print_r($array);
     echo "</pre>";
-    //die();*/
-    
+    die();*/
+
     $ClienteC -> inserta_cliente($_POST);
-    $ReservacionesC->inserta_reservaciones($_POST);
-    $ReservacionC -> insertar_reservacion($_POST);
+
+    
+
+    if(isset($_POST['Fecha_reservaciones']) 
+      && isset($_POST['nombre_mesas']) 
+      && isset($_POST['No_asientos_reservaciones'])
+      && isset($_POST['Hora_reservaciones'])
+
+      ){
+
+      $arreglo = array(
+        'Hora_reservaciones' => $_POST['Hora_reservaciones'],
+        'Fecha_reservaciones' => $_POST['Fecha_reservaciones'],
+        'No_asientos_reservaciones' => $_POST['No_asientos_reservaciones'],
+        'nombre_mesas' => $_POST['nombre_mesas'],
+        'costo' => $_POST['costo_reservacion'],
+        'cliente' => $ClienteC -> consulta_id(),
+
+      );
+
+      $ReservacionesC->inserta_reservaciones($arreglo);
+      //$ReservacionC -> inserta_reservacion($arreglo);
+    }
+    
+    
 
   }
- 
-
 
 ?>
 
@@ -67,7 +95,7 @@ $ReservacionesC = new ReservacionesController();
         input.placeholder = "$ "+precio_t+" mxn";
         input.value= precio_t ;
 	}
-	window.onload = precioTotal;
+	//window.onload = precioTotal;
 
 </script>
 
