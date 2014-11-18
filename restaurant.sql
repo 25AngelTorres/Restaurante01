@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 18-11-2014 a las 06:59:11
+-- Tiempo de generación: 18-11-2014 a las 08:43:03
 -- Versión del servidor: 5.6.20
 -- Versión de PHP: 5.5.15
 
@@ -30,7 +30,7 @@ CREATE TABLE IF NOT EXISTS `cartas` (
 `Id_carta` int(2) NOT NULL,
   `Tipo` varchar(15) COLLATE latin1_spanish_ci DEFAULT NULL,
   `Descripcion` varchar(60) COLLATE latin1_spanish_ci DEFAULT NULL
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci AUTO_INCREMENT=4 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci AUTO_INCREMENT=5 ;
 
 --
 -- Volcado de datos para la tabla `cartas`
@@ -80,7 +80,7 @@ CREATE TABLE IF NOT EXISTS `mesas` (
 `Id_mesa` int(3) NOT NULL,
   `Nombre` varchar(30) COLLATE latin1_spanish_ci NOT NULL,
   `Precio` int(11) NOT NULL
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci AUTO_INCREMENT=7 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci AUTO_INCREMENT=8 ;
 
 --
 -- Volcado de datos para la tabla `mesas`
@@ -130,20 +130,22 @@ CREATE TABLE IF NOT EXISTS `platillos` (
   `Tipo` int(2) DEFAULT NULL,
   `Nombre` varchar(30) COLLATE latin1_spanish_ci DEFAULT NULL,
   `Descripcion` varchar(500) COLLATE latin1_spanish_ci DEFAULT NULL,
-  `Precio` int(11) DEFAULT NULL
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci AUTO_INCREMENT=7 ;
+  `Precio` int(11) DEFAULT NULL,
+  `ImagenG` varchar(300) COLLATE latin1_spanish_ci NOT NULL,
+  `ImagenC` varchar(300) COLLATE latin1_spanish_ci NOT NULL
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci AUTO_INCREMENT=9 ;
 
 --
 -- Volcado de datos para la tabla `platillos`
 --
 
-INSERT INTO `platillos` (`Id_platillo`, `Tipo`, `Nombre`, `Descripcion`, `Precio`) VALUES
-(6, 1, 'Cazuela de Vacuno', 'Tapapecho o Asado de tira, Piment&oacute;n (picado en tiras), dientes de Ajo, Zanahoria (picada en tiras), Apio, Papas, Porotos Verdes, Zapallo, Arroz, Choclo, Perejil picado, agua fr&iacute;a, Or&eacute;gano Entero Gourmet, Cebolla Sal condimentada Gourmet, Ajo Sal condimentada Gourmet, Pimienta Blanca Molida Gourmet (en peque&ntilde;a cantidad), Sal.', 50),
-(2, 1, 'Conejo al pulque', 'chile pasilla limpio, desvenado y asado, \r\n tomate asado, cebolla asada, dientes de ajo asados, comino, conejo, 300 ml de pulque.', 50),
-(1, 2, 'Fideo soba con at&uacute;n', 'nidos de noodles de trigo, aceite de ajonjol&iacute;, salsa de soya, ajonjol&iacute;, esp&aacute;rragos, lomo de at&uacute;n fresco.', 40),
-(4, 2, 'Flores Rellenas', '<strong>Mole de frijol: </strong> frijol, agua, ajo, cebolla.                                <strong>Chips de Calabaza: </strong> harina, yema de huevo, agua mineral, calabaza. <strong>flores: </strong> flor de calabaza, queso Oaxaca, crema &aacute;cida, salsa verde.', 30),
-(5, 3, 'Pollo al conac', 'Presas de pollo sin piel, Sal, Pimienta Negra Molida Gourmet, Ajo en Polvo Gourmet, Or&eacute;gano Entero Gourmet, Jugo de un lim&oacute;n, mantequilla, cebolla rallada, Co&ntilde;ac, vino blanco, caldo de pollo, Aj&iacute; de color Gourmet para espolvorear.', 55),
-(3, 3, 'Risotto Di Brasato Di Vitello', 'cebolla picada, dientes de ajo picados, aceite de oliva, champi&ntilde;ones blancos, fileteados, 40 gr de ternera, previamente braseada, rodajas de tomate deshidratado, vino blanco seco, arroz Arborio, tomillo, cdta de mantequilla, cda de queso Parmesano, rallado.', 60);
+INSERT INTO `platillos` (`Id_platillo`, `Tipo`, `Nombre`, `Descripcion`, `Precio`, `ImagenG`, `ImagenC`) VALUES
+(1, 2, 'Fideo soba con at&uacute;n', 'nidos de noodles de trigo, aceite de ajonjol&iacute;, salsa de soya, ajonjol&iacute;, esp&aacute;rragos, lomo de at&uacute;n fresco.', 40, '01Fideo soba con atún', '02Fideo soba con atún'),
+(2, 1, 'Conejo al pulque', 'chile pasilla limpio, desvenado y asado, \r\n tomate asado, cebolla asada, dientes de ajo asados, comino, conejo, 300 ml de pulque.', 50, '01Conejo al pulque', '02Conejo al pulque'),
+(3, 3, 'Risotto Di Brasato Di Vitello', 'cebolla picada, dientes de ajo picados, aceite de oliva, champi&ntilde;ones blancos, fileteados, 40 gr de ternera, previamente braseada, rodajas de tomate deshidratado, vino blanco seco, arroz Arborio, tomillo, cdta de mantequilla, cda de queso Parmesano, rallado.', 60, '01Risotto Di Brasato Di Vitello', '02Risotto Di Brasato Di Vitello'),
+(4, 2, 'Flores Rellenas', '<strong>Mole de frijol: </strong> frijol, agua, ajo, cebolla.                                <strong>Chips de Calabaza: </strong> harina, yema de huevo, agua mineral, calabaza. <strong>flores: </strong> flor de calabaza, queso Oaxaca, crema &aacute;cida, salsa verde.', 30, '01Flores Rellenas', '02Flores Rellenas'),
+(5, 3, 'Pollo al conac', 'Presas de pollo sin piel, Sal, Pimienta Negra Molida Gourmet, Ajo en Polvo Gourmet, Or&eacute;gano Entero Gourmet, Jugo de un lim&oacute;n, mantequilla, cebolla rallada, Co&ntilde;ac, vino blanco, caldo de pollo, Aj&iacute; de color Gourmet para espolvorear.', 55, '01Pollo al conac', '02Pollo al conac'),
+(6, 1, 'Cazuela de Vacuno', 'Tapapecho o Asado de tira, Piment&oacute;n (picado en tiras), dientes de Ajo, Zanahoria (picada en tiras), Apio, Papas, Porotos Verdes, Zapallo, Arroz, Choclo, Perejil picado, agua fr&iacute;a, Or&eacute;gano Entero Gourmet, Cebolla Sal condimentada Gourmet, Ajo Sal condimentada Gourmet, Pimienta Blanca Molida Gourmet (en peque&ntilde;a cantidad), Sal.', 50, '01Cazuela de Vacuno', '02Cazuela de Vacuno');
 
 -- --------------------------------------------------------
 
@@ -265,7 +267,7 @@ ALTER TABLE `usuario`
 -- AUTO_INCREMENT de la tabla `cartas`
 --
 ALTER TABLE `cartas`
-MODIFY `Id_carta` int(2) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
+MODIFY `Id_carta` int(2) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT de la tabla `cliente`
 --
@@ -280,7 +282,7 @@ MODIFY `No_cuenta` int(4) NOT NULL AUTO_INCREMENT;
 -- AUTO_INCREMENT de la tabla `mesas`
 --
 ALTER TABLE `mesas`
-MODIFY `Id_mesa` int(3) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=7;
+MODIFY `Id_mesa` int(3) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=8;
 --
 -- AUTO_INCREMENT de la tabla `orden`
 --
@@ -295,7 +297,7 @@ MODIFY `Id_pedido` int(3) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=25;
 -- AUTO_INCREMENT de la tabla `platillos`
 --
 ALTER TABLE `platillos`
-MODIFY `Id_platillo` int(2) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=7;
+MODIFY `Id_platillo` int(2) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=9;
 --
 -- AUTO_INCREMENT de la tabla `reservaciones`
 --
