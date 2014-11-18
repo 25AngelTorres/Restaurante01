@@ -41,8 +41,8 @@ class Cartas extends Modelo{
         return $this->Descripcion;
     }
     
-    public function set_password($valor){
-        $this->Descripcion = trim( md5($valor) );
+    public function set_descripcion($valor){
+        $this->Descripcion = $valor;
     }
     
 

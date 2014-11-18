@@ -35,10 +35,10 @@ if(isset($_POST['nombre_cliente'])
     && isset($_POST['email_cliente'])
  ){
 
-    echo "<pre>";
+    /*echo "<pre>";
         print_r($_POST);
     echo "</pre>";
-    die();
+    die();*/
 
     $ClienteC -> inserta_cliente($_POST);
 

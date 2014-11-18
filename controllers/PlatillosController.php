@@ -13,7 +13,7 @@ Contine las clases
 		}
 
 		//Funcion para insertar una mesa
-		public function inserta_platillos($datos){
+		public function inserta_platillos($datos, $files){
 			//Solo es para acegurarse que se estan enviando los archivos
 		    /*echo "<pre>";
 		      print_r($datos);
@@ -27,6 +27,8 @@ Contine las clases
 			$this->set_nombre($datos['nombre_platillos']);
 			$this->set_descripcion($datos['descripcion_platillos']);
 			$this->set_precio($datos['precio_platillos']);
+			$this->set_imagenG($datos['nombre_platillos']);
+			$this->set_imagenC($datos['nombre_platillos']);
 			
 			//Verificar si existen errores
 			if(count ($this->errores)>0){
@@ -36,6 +38,9 @@ Contine las clases
 			}
 			else{
 				$this->muestra_exito=true;
+				//Copiar la direccion del archivo a un nueva carpeta
+				move_uploaded_file($files['ImagenG']['tmp_name'], "../img/menu/01".$datos['nombre_platillos'].'.jpg');
+				move_uploaded_file($files['ImagenC']['tmp_name'], "../img/menu/02".$datos['nombre_platillos'].'.jpg');
 				//Insertar en la Base de datos
 				$this->inserta($this->get_atributos());
 			}

@@ -9,7 +9,8 @@ class Platillos extends Modelo{
         'Nombre'=>array(),
 		'Descripcion'=>array(),
 		'Precio'=>array(),
-
+        'ImagenG'=>array(),
+        'ImagenC'=>array(),
     );
     
     public $errores = array( );
@@ -18,8 +19,8 @@ class Platillos extends Modelo{
     private $Nombre;
 	private $Descripcion;
 	private $Precio;
-
-
+    private $ImagenG;
+    private $ImagenC;
        
     
     function Platillos(){
@@ -67,7 +68,21 @@ class Platillos extends Modelo{
         $this->Precio = $valor;
     }
 
+    public function get_imagenG(){
+        return $this->ImagenG;
+    } 
+    public function set_imagenG($valor){
+        //trim simplemente quita espacios al principio y final de la cadena
+        $this->ImagenG = "01".trim($valor);
+    }
     
-    
+    public function get_imagenC(){
+        return $this->ImagenC;
+    } 
+    public function set_imagenC($valor){
+        //trim simplemente quita espacios al principio y final de la cadena
+        $this->ImagenC = "02".trim($valor);
+    }
+
 }
 ?>
