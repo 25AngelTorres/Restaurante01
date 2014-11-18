@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 17-11-2014 a las 06:58:32
+-- Tiempo de generación: 18-11-2014 a las 06:59:11
 -- Versión del servidor: 5.6.20
 -- Versión de PHP: 5.5.15
 
@@ -56,22 +56,7 @@ CREATE TABLE IF NOT EXISTS `cliente` (
   `Direccion` int(30) DEFAULT NULL,
   `Telefono` int(11) DEFAULT NULL,
   `Email` varchar(50) COLLATE latin1_spanish_ci DEFAULT NULL
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci AUTO_INCREMENT=11 ;
-
---
--- Volcado de datos para la tabla `cliente`
---
-
-INSERT INTO `cliente` (`Id_cte`, `Nombre`, `CP`, `Ciudad`, `Colonia`, `Direccion`, `Telefono`, `Email`) VALUES
-(2, 'Angel2', 38346, 'Cortazar', 0, 0, 234567890, 'angel2@angel2'),
-(3, 'Angel2', 38346, 'Cortazar', 0, 0, 234567890, 'angel2@angel2'),
-(4, 'Angel2', 38346, 'Cortazar', 0, 0, 234567890, 'angel2@angel2'),
-(5, 'Angel2', 38346, 'Cortazar', 0, 0, 234567890, 'angel2@angel2'),
-(6, 'Angel2', 38346, 'Cortazar', 0, 0, 234567890, 'angel2@angel2'),
-(7, 'Angel01', 3456789, 'Angel01', 0, 0, 23456789, 'Angel@Angel'),
-(8, 'Angel01', 3456789, 'Angel01', 0, 0, 23456789, 'Angel@Angel'),
-(9, 'Angel01', 3456789, 'Angel01', 0, 0, 23456789, 'Angel@Angel'),
-(10, 'Angel01', 3456789, 'Angel01', 0, 0, 23456789, 'Angel@Angel');
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci AUTO_INCREMENT=37 ;
 
 -- --------------------------------------------------------
 
@@ -117,10 +102,10 @@ INSERT INTO `mesas` (`Id_mesa`, `Nombre`, `Precio`) VALUES
 
 CREATE TABLE IF NOT EXISTS `orden` (
 `No_orden` int(3) NOT NULL,
-  `Cliente` int(3) DEFAULT NULL,
-  `Pedido` int(3) DEFAULT NULL,
-  `Saldo` int(11) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci AUTO_INCREMENT=1 ;
+  `Cliente` int(2) NOT NULL,
+  `Pedido` int(3) NOT NULL,
+  `Saldo` int(11) NOT NULL
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci AUTO_INCREMENT=23 ;
 
 -- --------------------------------------------------------
 
@@ -129,10 +114,10 @@ CREATE TABLE IF NOT EXISTS `orden` (
 --
 
 CREATE TABLE IF NOT EXISTS `pedido` (
-  `Id_pedido` int(3) NOT NULL,
-  `Platillo` int(2) DEFAULT NULL,
-  `Raciones` int(2) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
+`Id_pedido` int(3) NOT NULL,
+  `Platillo` int(2) NOT NULL,
+  `Raciones` int(2) NOT NULL
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci AUTO_INCREMENT=25 ;
 
 -- --------------------------------------------------------
 
@@ -183,8 +168,10 @@ CREATE TABLE IF NOT EXISTS `reservaciones` (
   `Fecha` date DEFAULT NULL,
   `Hora` time DEFAULT NULL,
   `Mesa` int(3) DEFAULT NULL,
-  `No_asientos` int(1) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+  `No_asientos` int(1) DEFAULT NULL,
+  `Costo` int(11) NOT NULL,
+  `Cliente` int(11) NOT NULL
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=17 ;
 
 -- --------------------------------------------------------
 
@@ -238,13 +225,13 @@ ALTER TABLE `mesas`
 -- Indices de la tabla `orden`
 --
 ALTER TABLE `orden`
- ADD PRIMARY KEY (`No_orden`), ADD KEY `Cliente` (`Cliente`,`Pedido`,`Saldo`), ADD KEY `Pedido` (`Pedido`);
+ ADD PRIMARY KEY (`No_orden`);
 
 --
 -- Indices de la tabla `pedido`
 --
 ALTER TABLE `pedido`
- ADD PRIMARY KEY (`Id_pedido`), ADD KEY `Platillo` (`Platillo`,`Raciones`);
+ ADD PRIMARY KEY (`Id_pedido`);
 
 --
 -- Indices de la tabla `platillos`
@@ -283,7 +270,7 @@ MODIFY `Id_carta` int(2) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
 -- AUTO_INCREMENT de la tabla `cliente`
 --
 ALTER TABLE `cliente`
-MODIFY `Id_cte` int(3) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=11;
+MODIFY `Id_cte` int(3) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=37;
 --
 -- AUTO_INCREMENT de la tabla `cuenta`
 --
@@ -298,7 +285,12 @@ MODIFY `Id_mesa` int(3) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=7;
 -- AUTO_INCREMENT de la tabla `orden`
 --
 ALTER TABLE `orden`
-MODIFY `No_orden` int(3) NOT NULL AUTO_INCREMENT;
+MODIFY `No_orden` int(3) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=23;
+--
+-- AUTO_INCREMENT de la tabla `pedido`
+--
+ALTER TABLE `pedido`
+MODIFY `Id_pedido` int(3) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=25;
 --
 -- AUTO_INCREMENT de la tabla `platillos`
 --
@@ -308,7 +300,7 @@ MODIFY `Id_platillo` int(2) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=7;
 -- AUTO_INCREMENT de la tabla `reservaciones`
 --
 ALTER TABLE `reservaciones`
-MODIFY `Id_reservacion` int(3) NOT NULL AUTO_INCREMENT;
+MODIFY `Id_reservacion` int(3) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=17;
 --
 -- AUTO_INCREMENT de la tabla `usuario`
 --
@@ -323,19 +315,6 @@ MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
 --
 ALTER TABLE `cuenta`
 ADD CONSTRAINT `CuentaFK` FOREIGN KEY (`Cliente`) REFERENCES `cliente` (`Id_cte`) ON DELETE CASCADE ON UPDATE CASCADE;
-
---
--- Filtros para la tabla `orden`
---
-ALTER TABLE `orden`
-ADD CONSTRAINT `OrdenFK` FOREIGN KEY (`Cliente`) REFERENCES `cliente` (`Id_cte`) ON DELETE CASCADE ON UPDATE CASCADE,
-ADD CONSTRAINT `OrdenFK2` FOREIGN KEY (`Pedido`) REFERENCES `pedido` (`Id_pedido`);
-
---
--- Filtros para la tabla `pedido`
---
-ALTER TABLE `pedido`
-ADD CONSTRAINT `PedidoFK` FOREIGN KEY (`Platillo`) REFERENCES `platillos` (`Id_platillo`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Filtros para la tabla `platillos`
