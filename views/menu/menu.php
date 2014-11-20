@@ -78,7 +78,7 @@ $PlatillosC = new PlatillosController();
                                 Gourmet
                             </h2>
                         </a>
-                        <p class="post-meta">Comida expl&iacute;cita, etractiva y &uacute;nica en su sabor.</p>
+                        <p class="post-meta">Comida expl&iacute;cita, atractiva y &uacute;nica en su sabor.</p>
                     </div>
                     <div id="gourmet">
                     <div id="portfolio" class="bg-light-gray">

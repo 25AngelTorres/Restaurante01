@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 18-11-2014 a las 08:43:03
+-- Tiempo de generación: 20-11-2014 a las 16:52:37
 -- Versión del servidor: 5.6.20
 -- Versión de PHP: 5.5.15
 
@@ -30,7 +30,7 @@ CREATE TABLE IF NOT EXISTS `cartas` (
 `Id_carta` int(2) NOT NULL,
   `Tipo` varchar(15) COLLATE latin1_spanish_ci DEFAULT NULL,
   `Descripcion` varchar(60) COLLATE latin1_spanish_ci DEFAULT NULL
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci AUTO_INCREMENT=5 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci AUTO_INCREMENT=4 ;
 
 --
 -- Volcado de datos para la tabla `cartas`
@@ -52,11 +52,12 @@ CREATE TABLE IF NOT EXISTS `cliente` (
   `Nombre` varchar(30) COLLATE latin1_spanish_ci DEFAULT NULL,
   `CP` int(5) DEFAULT NULL,
   `Ciudad` varchar(30) COLLATE latin1_spanish_ci DEFAULT NULL,
-  `Colonia` int(20) DEFAULT NULL,
-  `Direccion` int(30) DEFAULT NULL,
+  `Colonia` varchar(500) COLLATE latin1_spanish_ci DEFAULT NULL,
+  `Direccion` varchar(500) COLLATE latin1_spanish_ci DEFAULT NULL,
   `Telefono` int(11) DEFAULT NULL,
-  `Email` varchar(50) COLLATE latin1_spanish_ci DEFAULT NULL
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci AUTO_INCREMENT=37 ;
+  `Email` varchar(50) COLLATE latin1_spanish_ci DEFAULT NULL,
+  `Password` varchar(100) COLLATE latin1_spanish_ci DEFAULT NULL
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci AUTO_INCREMENT=5 ;
 
 -- --------------------------------------------------------
 
@@ -80,7 +81,7 @@ CREATE TABLE IF NOT EXISTS `mesas` (
 `Id_mesa` int(3) NOT NULL,
   `Nombre` varchar(30) COLLATE latin1_spanish_ci NOT NULL,
   `Precio` int(11) NOT NULL
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci AUTO_INCREMENT=8 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci AUTO_INCREMENT=7 ;
 
 --
 -- Volcado de datos para la tabla `mesas`
@@ -105,7 +106,7 @@ CREATE TABLE IF NOT EXISTS `orden` (
   `Cliente` int(2) NOT NULL,
   `Pedido` int(3) NOT NULL,
   `Saldo` int(11) NOT NULL
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci AUTO_INCREMENT=23 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci AUTO_INCREMENT=3 ;
 
 -- --------------------------------------------------------
 
@@ -117,7 +118,7 @@ CREATE TABLE IF NOT EXISTS `pedido` (
 `Id_pedido` int(3) NOT NULL,
   `Platillo` int(2) NOT NULL,
   `Raciones` int(2) NOT NULL
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci AUTO_INCREMENT=25 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci AUTO_INCREMENT=3 ;
 
 -- --------------------------------------------------------
 
@@ -133,7 +134,7 @@ CREATE TABLE IF NOT EXISTS `platillos` (
   `Precio` int(11) DEFAULT NULL,
   `ImagenG` varchar(300) COLLATE latin1_spanish_ci NOT NULL,
   `ImagenC` varchar(300) COLLATE latin1_spanish_ci NOT NULL
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci AUTO_INCREMENT=9 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci AUTO_INCREMENT=8 ;
 
 --
 -- Volcado de datos para la tabla `platillos`
@@ -173,7 +174,7 @@ CREATE TABLE IF NOT EXISTS `reservaciones` (
   `No_asientos` int(1) DEFAULT NULL,
   `Costo` int(11) NOT NULL,
   `Cliente` int(11) NOT NULL
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=17 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
 
 -- --------------------------------------------------------
 
@@ -267,12 +268,12 @@ ALTER TABLE `usuario`
 -- AUTO_INCREMENT de la tabla `cartas`
 --
 ALTER TABLE `cartas`
-MODIFY `Id_carta` int(2) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=5;
+MODIFY `Id_carta` int(2) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT de la tabla `cliente`
 --
 ALTER TABLE `cliente`
-MODIFY `Id_cte` int(3) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=37;
+MODIFY `Id_cte` int(3) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT de la tabla `cuenta`
 --
@@ -282,27 +283,27 @@ MODIFY `No_cuenta` int(4) NOT NULL AUTO_INCREMENT;
 -- AUTO_INCREMENT de la tabla `mesas`
 --
 ALTER TABLE `mesas`
-MODIFY `Id_mesa` int(3) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=8;
+MODIFY `Id_mesa` int(3) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=7;
 --
 -- AUTO_INCREMENT de la tabla `orden`
 --
 ALTER TABLE `orden`
-MODIFY `No_orden` int(3) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=23;
+MODIFY `No_orden` int(3) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT de la tabla `pedido`
 --
 ALTER TABLE `pedido`
-MODIFY `Id_pedido` int(3) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=25;
+MODIFY `Id_pedido` int(3) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT de la tabla `platillos`
 --
 ALTER TABLE `platillos`
-MODIFY `Id_platillo` int(2) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=9;
+MODIFY `Id_platillo` int(2) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=8;
 --
 -- AUTO_INCREMENT de la tabla `reservaciones`
 --
 ALTER TABLE `reservaciones`
-MODIFY `Id_reservacion` int(3) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=17;
+MODIFY `Id_reservacion` int(3) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT de la tabla `usuario`
 --

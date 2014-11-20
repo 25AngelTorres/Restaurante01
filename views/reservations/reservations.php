@@ -35,10 +35,10 @@ $ReservacionesC = new ReservacionesController();
     && isset($_POST['email_cliente'])
     )  {
     
-    echo "<pre>";
+    /*echo "<pre>";
       print_r($array);
     echo "</pre>";
-    die();
+    die();*/
 
     $ClienteC -> inserta_cliente($_POST);
 
@@ -64,7 +64,7 @@ $ReservacionesC = new ReservacionesController();
     }
 
   }
-
+  else{
   if(isset($_POST['Fecha_reservaciones']) 
       && isset($_POST['nombre_mesas']) 
       && isset($_POST['No_asientos_reservaciones'])
@@ -85,7 +85,7 @@ $ReservacionesC = new ReservacionesController();
       $ReservacionesC->inserta_reservaciones($arreglo);
       //$ReservacionC -> inserta_reservacion($arreglo);
     }
-
+  }
 ?>
 
 <script type="text/javascript">
@@ -171,7 +171,7 @@ $ReservacionesC = new ReservacionesController();
                 echo '
                   <div class="row" id="session_No_Iniciada">
                     <div class="col-lg-9 col-lg-offset-2 col-md-10 col-md-offset-1">
-                      <h3>Llena los campos requeridos o <a href="../site/login.php">Inicia Session</a> Para realizar tu reservaci&oacute;n</h3>
+                      <h3>Llena los campos requeridos o <a href="../site/login.php">Inicia Sesion</a> Para realizar tu reservaci&oacute;n</h3>
                       <hr>
                       <div class="form-group">
                       <input type="text" name="nombre_cliente" value="" placeholder="Nombre" class="form-control">

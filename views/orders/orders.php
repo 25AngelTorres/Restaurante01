@@ -428,7 +428,7 @@ if(isset($_POST['nombre_cliente'])
 	    			</div>
 	    		</div>
 
-                <?php if(isset($_SESSION['user']))
+                <?php if(isset($_SESSION['user']) && $_SESSION['rol']== '0')
             echo '
               <div class="row" id="session_No_Iniciada">
                     <div class="col-lg-9 col-lg-offset-2 col-md-10 col-md-offset-1">
