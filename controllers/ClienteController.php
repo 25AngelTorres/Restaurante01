@@ -7,7 +7,7 @@ Contine las clases
 		
 		//Instancia de la clase Cliente
 		public $muestra_errores = false;
-		public $muestra_exito=true;
+		public $muestra_exito=false;
 		function __construct(){
 			 parent::Cliente();
 		}
@@ -34,16 +34,20 @@ Contine las clases
 			$this->set_telefono($datos['telefono_cliente']);
 			$this->set_email($datos['email_cliente']);
 			
+			if (isset($datos['password_cliente'])) {
+				$this->set_password($datos['password_cliente']);
+			}
+			
+			
 			//Verificar si existen errores
 			if(count ($this->errores)>0){
 				$this->muestra_errores=true;
-				/*print_r($status->errores);
-				die();*/
 			}
 			else{
 				$this->muestra_exito=true;
 				//Insertar en la Base de datos
 				$this->inserta($this->get_atributos());
+				//$this -> iniciarSesion($datos['email_cliente']);
 			}
 			//Detener un script *die();
 
@@ -58,7 +62,7 @@ Contine las clases
             	echo '</div>';
 			}
 			if ($this->muestra_exito) {
-				echo '<div class="alert alert-success" role="alert"><h4>Pedido Correcto</h4></div>';
+				echo '<div class="alert alert-success" role="alert"><h4>Registro exitoso</h4></div>';
 			}
 		}
 
@@ -82,6 +86,56 @@ Contine las clases
 			return $rows['0']['id'];
 	    }
 
+
+	    public function validaUsuario($datos){
+			$rs = $this->consulta_sql(" select * from cliente where Email = '".$datos['email']."'  ");
+        	$rows = $rs->GetArray();
+        	if(count($rows) > 0){
+        		if ($rows['0']['Password']== md5($datos['password'])) {
+        			$this->iniciarSesion($rows['0']['Email']);
+        		}else{
+		     		$this->muestra_errores = true;
+		     		$this->errores[] = 'Password incorrecto';
+		     	}
+	     	}else{
+	     		$this->muestra_errores = true;
+	     		$this->errores[] = 'este email no existe';
+	     	}
+		}
+		public function verificaExistencia($datos){
+			$rs = $this->consulta_sql(" select * from cliente where Email = '".$datos['email_cliente']."'  ");
+        	$rows = $rs->GetArray();
+        	if(count($rows) > 0){
+        		$this->muestra_errores = true;
+		     	$this->errores[] = 'Este usuario (email) ya esta registrado';
+		     	return false;
+        	}else
+        	return true;
+		}
+		public function iniciarSesion($email){
+			$_SESSION['rol'] = '0';
+			$_SESSION['user'] = $email;
+			$_SESSION['id_cte']= $this-> session_cte('Id_cte',$email);
+			$_SESSION['email']= $_SESSION['user'];
+			$_SESSION['nombre']= $this-> session_cte('Nombre',$email);
+
+			header("Location: inicio.php");
+		}
+
+		public function cerrarSesion(){
+			session_destroy();
+			header("Location: inicio.php");
+		}
+		public function session_cte($Columna,$email){
+			$rs = $this->consulta_sql(" select ".$Columna." from cliente where Email = '".$email."'  ");
+        	$rows = $rs->GetArray();
+        	return $rows['0'][$Columna];
+		}
+
+		public function session_cerrarSesion(){
+			session_destroy();
+			header('location:views/reservations/reservations.php');
+		}
 
 	}
 ?>

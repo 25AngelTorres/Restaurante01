@@ -100,7 +100,7 @@
                     </div>
                     <hr>
                     <div class="post-preview">
-                        <a href="<?php echo BASEURL ?>/views/Mesas/fomr_mesas.php">
+                        <a href="<?php echo BASEURL ?>/views/Mesas/form_mesas.php">
                             <h4 class="post-title">
                                 Agregar una nueva Mesa
                             </h4>

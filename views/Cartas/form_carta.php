@@ -79,7 +79,7 @@
                     </div>
                     <hr>
                     <div class="post-preview">
-                        <a href="<?php echo BASEURL ?>/views/Platillos/fomr_platillos.php">
+                        <a href="<?php echo BASEURL ?>/views/Platillos/form_platillos.php">
                             <h4 class="post-title">
                                 Agregar un nuevo platillo
                             </h4>

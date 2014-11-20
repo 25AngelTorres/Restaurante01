@@ -69,7 +69,7 @@
                     </li>
                     
                     <?php
-                        if (isset($_SESSION['user'])) {
+                        if (isset($_SESSION['user']) && ($_SESSION['rol'] == '1') ) {
                             echo '<li class="page-scroll">
                             <a href="'.BASEURL.'/views/administration/administration.php"><span class="glyphicon glyphicon-off"></span> Administration</a>
                             </li>';

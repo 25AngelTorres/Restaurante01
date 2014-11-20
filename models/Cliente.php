@@ -12,6 +12,7 @@ class Cliente extends Modelo{
 		'Direccion'=>array(),
 		'Telefono'=>array(),
         'Email'=>array(),
+        'Password'=>array(),
     );
     
     public $errores = array( );
@@ -23,6 +24,7 @@ class Cliente extends Modelo{
 	private $Direccion;
 	private $Telefono;
     private $Email;
+    private $Password;
 
        
     
@@ -93,6 +95,13 @@ class Cliente extends Modelo{
 
     public function set_email($valor){
         $this->Email = $valor;
+    }
+    public function get_password(){
+        return $this->Password;
+    }
+
+    public function set_password($valor){
+        $this->Password = trim( md5($valor) );
     }
     
 }

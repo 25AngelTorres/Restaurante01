@@ -73,14 +73,14 @@ $PlatillosC = new PlatillosController();
                     </div>
                     <hr>
                     <div class="post-preview">
-                        <a href="#gourmet">
-                            <h2 class="post-title" id="#linkgourmet">
+                        <a href="#gourmet" id="linkgourmet">
+                            <h2 class="post-title" >
                                 Gourmet
                             </h2>
                         </a>
                         <p class="post-meta">Comida expl&iacute;cita, etractiva y &uacute;nica en su sabor.</p>
                     </div>
-                    <div id="gourmet"
+                    <div id="gourmet">
                     <div id="portfolio" class="bg-light-gray">
 
                             <?php echo $PlatillosC->muestraPlatillos(3); ?>

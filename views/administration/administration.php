@@ -40,7 +40,7 @@
                             <div class="col-md-6">
                                 <div class="list-group">
                                     <a href="../Mesas/form_mesas.php" class="list-group-item">Mesas</a>
-                                    <a href="../Report/form_report.php" class="list-group-item">Reporte</a>
+                                    <a href="../Report/report.php" class="list-group-item">Reporte</a>
                                 </div>
                             </div>
                     </div>

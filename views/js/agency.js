@@ -55,14 +55,7 @@ $(document).ready(function() {
                 $('#desayuno').show('slow');
               }
             );
-            $('#linkgourmet').click(
-              function(){
-                $('#desayuno').hide();
-                $('#gourmet').hide();
-                $('#mexicana').hide();
-                $('#gourmet').show('slow');
-              }
-            );
+            
             $('#linkmexicana').click(
               function(){
                 $('#desayuno').hide();
@@ -72,5 +65,13 @@ $(document).ready(function() {
               }
             );
 
+            $('#linkgourmet').click(
+              function(){
+                $('#desayuno').hide();
+                $('#gourmet').hide();
+                $('#mexicana').hide();
+                $('#gourmet').show('slow');
+              }
+            );
 
 });

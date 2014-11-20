@@ -132,6 +132,45 @@ $ReservacionesC = new ReservacionesController();
 	    				<h2>Ingresa los datos requeridos</h2>
 	    			</div>
 	    		</div>
+
+          <?php if(isset($_SESSION['user']))
+            echo '
+              <div class="row" id="session_No_Iniciada">
+                    <div class="col-lg-9 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    <hr>
+                    <label>Usuario: <h4>'.$_SESSION["nombre"].'</h4></label>
+                    <hr>
+                    <label>Email: <h4>'.$_SESSION["email"].'</h4></label>
+                    <p><a href="'.BASEURL.'/views/site/logout.php">Cambiar de usuario</a></p>
+                    </div>
+                  </div>
+                  ';
+              else{
+                echo '
+                  <div class="row" id="session_No_Iniciada">
+                    <div class="col-lg-9 col-lg-offset-2 col-md-10 col-md-offset-1">
+                      <h3>Llena los campos requeridos o <a href="../site/login.php">Inicia Session</a> Para realizar tu reservaci&oacute;n</h3>
+                      <hr>
+                      <input type="text" name="nombre_cliente" value="" placeholder="Nombre" class="form-control">
+                      <hr>
+                      <input type="text" name="direccion_cliente" value="" placeholder="Direccion" class="form-control">
+                      <hr>
+                      <input type="text" name="cp_cliente" value="" placeholder="CP" class="form-control">
+                      <hr>
+                      <input type="text" name="ciudad_cliente" value="" placeholder="Ciudad" class="form-control">
+                      <hr>
+                      <input type="text" name="colonia_cliente" value="" placeholder="Colonia" class="form-control">
+                      <hr>
+                      <input type="tel" name="telefono_cliente" value="" placeholder="Telefono" class="form-control">
+                      <hr>
+                      <input type="email" name="email_cliente" value="" placeholder="Email" class="form-control">
+                      <hr>
+                    </div>
+                  </div>
+                ';
+              }
+           ?>
+
 	    		<div class="row">
 	    			<div class="col-lg-4 col-lg-offset-2 col-md-10 col-md-offset-1">
 		    			<div class="form-group">
@@ -170,26 +209,11 @@ $ReservacionesC = new ReservacionesController();
 	    				<img src="../img/reservations/mesas.png" alt="" width="100%" class="img-thumbnail">
 	    			</div>
 	    		</div>
-	    		<div class="row">
-	    			<div class="col-lg-9 col-lg-offset-2 col-md-10 col-md-offset-1">
-	    				<h3>Datos personales</h3>
-	    				<hr>
-	    				<input type="text" name="nombre_cliente" value="" placeholder="Nombre" class="form-control">
-	    				<hr>
-	    				<input type="text" name="direccion_cliente" value="" placeholder="Direccion" class="form-control">
-	    				<hr>
-	    				<input type="text" name="cp_cliente" value="" placeholder="CP" class="form-control">
-	    				<hr>
-	    				<input type="text" name="ciudad_cliente" value="" placeholder="Ciudad" class="form-control">
-	    				<hr>
-	    				<input type="text" name="colonia_cliente" value="" placeholder="Colonia" class="form-control">
-	    				<hr>
-	    				<input type="tel" name="telefono_cliente" value="" placeholder="Telefono" class="form-control">
-	    				<hr>
-	    				<input type="email" name="email_cliente" value="" placeholder="Email" class="form-control">
-	    				<hr>
-	    			</div>
-	    		</div>
+          
+
+           
+
+	    		
 	    		<div class="row">
 	    			<div class="col-md-12" align="center">
 	    				<input type="submit" name="" value="Reservar" class="btn btn-xl">

@@ -42,7 +42,7 @@ if(isset($_POST['nombre_cliente'])
 
     $ClienteC -> inserta_cliente($_POST);
 
-    if(isset($_POST['Costo1'])){
+    if(isset($_POST['Costo1']) && $_POST['Costo1']>0){
     	$array = array(
 		    "platillo_pedido" => $_POST['Platillo_1'],
 		    "raciones_pedido" => $_POST['Platillo1_raciones'],
@@ -59,7 +59,7 @@ if(isset($_POST['nombre_cliente'])
     	$OrdenC -> inserta_Orden($array2);
     }
 
-    if(isset($_POST['Costo2'])){
+    if(isset($_POST['Costo2']) && $_POST['Costo2']>0){
         $array = array(
             "platillo_pedido" => $_POST['Platillo_2'],
             "raciones_pedido" => $_POST['Platillo2_raciones'],
@@ -76,7 +76,7 @@ if(isset($_POST['nombre_cliente'])
         $OrdenC -> inserta_Orden($array2);
     }
 
-    if(isset($_POST['Costo3'])){
+    if(isset($_POST['Costo3']) && $_POST['Costo3']>0){
         $array = array(
             "platillo_pedido" => $_POST['Platillo_3'],
             "raciones_pedido" => $_POST['Platillo3_raciones'],
@@ -93,7 +93,7 @@ if(isset($_POST['nombre_cliente'])
         $OrdenC -> inserta_Orden($array2);
     }
 
-    if(isset($_POST['Costo4'])){
+    if(isset($_POST['Costo4']) && $_POST['Costo4']>0){
         $array = array(
             "platillo_pedido" => $_POST['Platillo_4'],
             "raciones_pedido" => $_POST['Platillo4_raciones'],
@@ -110,7 +110,7 @@ if(isset($_POST['nombre_cliente'])
         $OrdenC -> inserta_Orden($array2);
     }
 
-    if(isset($_POST['Costo5'])){
+    if(isset($_POST['Costo5']) && $_POST['Costo5']>0){
         $array = array(
             "platillo_pedido" => $_POST['Platillo_5'],
             "raciones_pedido" => $_POST['Platillo5_raciones'],
@@ -126,11 +126,9 @@ if(isset($_POST['nombre_cliente'])
 
         $OrdenC -> inserta_Orden($array2);
     }
-
   }
 
 ?>
-
 
 <script type="text/javascript">
 	var precio_p1 = 0;			//Precio de los platillos individuales
@@ -304,8 +302,6 @@ if(isset($_POST['nombre_cliente'])
 
 </script>
 
-
-
 <!-- Header -->
     <header class="header_orders">
         <div class="container" >
@@ -340,6 +336,45 @@ if(isset($_POST['nombre_cliente'])
 	    				<p>Podras ordenar hasta CINCO platillos diferentes.</p>
 	    			</div>
 	    		</div>
+
+                <?php if(isset($_SESSION['user']))
+            echo '
+              <div class="row" id="session_No_Iniciada">
+                    <div class="col-lg-9 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    <hr>
+                    <label>Usuario: <h4>'.$_SESSION["nombre"].'</h4></label>
+                    <hr>
+                    <label>Email: <h4>'.$_SESSION["email"].'</h4></label>
+                    <p><a href="'.BASEURL.'/views/site/logout.php">Cambiar de usuario</a></p>
+                    </div>
+                  </div>
+                  ';
+              else{
+                echo '
+                  <div class="row" id="session_No_Iniciada">
+                    <div class="col-lg-9 col-lg-offset-2 col-md-10 col-md-offset-1">
+                      <h3>Llena los campos requeridos o <a href="../site/login.php">Inicia Session</a> Para realizar tu orden</h3>
+                      <hr>
+                      <input type="text" name="nombre_cliente" value="" placeholder="Nombre" class="form-control">
+                      <hr>
+                      <input type="text" name="direccion_cliente" value="" placeholder="Direccion" class="form-control">
+                      <hr>
+                      <input type="text" name="cp_cliente" value="" placeholder="CP" class="form-control">
+                      <hr>
+                      <input type="text" name="ciudad_cliente" value="" placeholder="Ciudad" class="form-control">
+                      <hr>
+                      <input type="text" name="colonia_cliente" value="" placeholder="Colonia" class="form-control">
+                      <hr>
+                      <input type="tel" name="telefono_cliente" value="" placeholder="Telefono" class="form-control">
+                      <hr>
+                      <input type="email" name="email_cliente" value="" placeholder="Email" class="form-control">
+                      <hr>
+                    </div>
+                  </div>
+                ';
+              }
+           ?>
+
 	    		<div class="row">
 	    			<div class="col-md-2 col-md-offset-1">
 	    				<h3>Platillo 1</h3>
@@ -446,29 +481,7 @@ if(isset($_POST['nombre_cliente'])
                 		</label>
 	    			</div>
 	    		</div>
-
 	    		<hr>
-
-	    		<div class="row">
-	    			<div class="col-lg-9 col-lg-offset-2 col-md-10 col-md-offset-1">
-	    				<h3>Datos personales</h3>
-	    				<hr>
-	    				<input type="text" name="nombre_cliente" value="" placeholder="Nombre" class="form-control">
-	    				<hr>
-	    				<input type="text" name="cp_cliente" value="" placeholder="CP" class="form-control">
-	    				<hr>
-	    				<input type="text" name="ciudad_cliente" value="" placeholder="Ciudad" class="form-control">
-	    				<hr>
-	    				<input type="text" name="colonia_cliente" value="" placeholder="Colonia" class="form-control">
-	    				<hr>
-	    				<input type="text" name="direccion_cliente" value="" placeholder="Direccion" class="form-control">
-	    				<hr>
-	    				<input type="tel" name="telefono_cliente" value="" placeholder="Telefono" class="form-control">
-	    				<hr>
-	    				<input type="email" name="email_cliente" value="" placeholder="Email" class="form-control">
-	    				<hr>
-	    			</div>
-	    		</div>
 	    		<div class="row">
 	    			<div class="col-md-12" align="center">
 	    				<input type="submit" name="" value="Ordenar" class="btn btn-xl">
