@@ -7,7 +7,7 @@ Contine las clases
 		
 		//Instancia de la clase Reservaciones
 		public $muestra_errores = false;
-		public $muestra_exito=true;
+		public $muestra_exito=false;
 		function __construct(){
 			 parent::Reservaciones();
 		}
@@ -56,7 +56,7 @@ Contine las clases
             	echo '</div>';
 			}
 			if ($this->muestra_exito) {
-				echo '<div class="alert alert-success" role="alert"><h4>Insercion Correcta</h4></div>';
+				echo '<div class="alert alert-success" role="alert"><h4>Reservaci&oacute;n exitosa</h4></div>';
 			}
 		}
 

@@ -46,7 +46,12 @@
 
                 </div>
             </div>
-		<form class="form-horizontal" role="form" id="registerForm" method="POST" enctype="multipart/form-data">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <?php $PlatillosC -> errores(); ?>
+            </div>
+        </div>
+		<form class="form-horizontal registerForm" role="form" id="registerForm" method="POST" enctype="multipart/form-data">
 			<div class="row">
 				<div class="col-lg-12 text-center">
 					<hr>

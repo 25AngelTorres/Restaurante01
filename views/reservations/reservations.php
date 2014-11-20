@@ -35,14 +35,12 @@ $ReservacionesC = new ReservacionesController();
     && isset($_POST['email_cliente'])
     )  {
     
-    /*echo "<pre>";
+    echo "<pre>";
       print_r($array);
     echo "</pre>";
-    die();*/
+    die();
 
     $ClienteC -> inserta_cliente($_POST);
-
-    
 
     if(isset($_POST['Fecha_reservaciones']) 
       && isset($_POST['nombre_mesas']) 
@@ -64,10 +62,29 @@ $ReservacionesC = new ReservacionesController();
       $ReservacionesC->inserta_reservaciones($arreglo);
       //$ReservacionC -> inserta_reservacion($arreglo);
     }
-    
-    
 
   }
+
+  if(isset($_POST['Fecha_reservaciones']) 
+      && isset($_POST['nombre_mesas']) 
+      && isset($_POST['No_asientos_reservaciones'])
+      && isset($_POST['Hora_reservaciones'])
+
+      ){
+
+      $arreglo = array(
+        'Hora_reservaciones' => $_POST['Hora_reservaciones'],
+        'Fecha_reservaciones' => $_POST['Fecha_reservaciones'],
+        'No_asientos_reservaciones' => $_POST['No_asientos_reservaciones'],
+        'nombre_mesas' => $_POST['nombre_mesas'],
+        'costo' => $_POST['costo_reservacion'],
+        'cliente' => $_SESSION['id_cte'],
+
+      );
+
+      $ReservacionesC->inserta_reservaciones($arreglo);
+      //$ReservacionC -> inserta_reservacion($arreglo);
+    }
 
 ?>
 
@@ -118,7 +135,12 @@ $ReservacionesC = new ReservacionesController();
                     <h3 class="section-subheading text-muted">Reserva tu lugar preferido para esos momentos especiales.</h3>
 
                     <a href="#form_reservations" class="page-scroll btn btn-xl" id="btn_reservations">Continuar</a>
-
+                </div>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col-lg-12 text-center">
+        <?php echo $ReservacionesC -> errores(); ?>
                 </div>
             </div>
     	</div>
@@ -126,7 +148,7 @@ $ReservacionesC = new ReservacionesController();
 
     <section id="form_reservations" class="bg-darkest-gray">
     	<div class="container bg-light-gray form_delta">
-    		<form class="form-horizontal" role="form" id="registerForm" method="POST" enctype="multipart/form-data">
+    		<form class="form-horizontal registerForm" role="form" id="registerForm" method="POST" enctype="multipart/form-data">
 	    		<div class="row">
 	    			<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
 	    				<h2>Ingresa los datos requeridos</h2>
@@ -151,19 +173,33 @@ $ReservacionesC = new ReservacionesController();
                     <div class="col-lg-9 col-lg-offset-2 col-md-10 col-md-offset-1">
                       <h3>Llena los campos requeridos o <a href="../site/login.php">Inicia Session</a> Para realizar tu reservaci&oacute;n</h3>
                       <hr>
+                      <div class="form-group">
                       <input type="text" name="nombre_cliente" value="" placeholder="Nombre" class="form-control">
+                      </div>
                       <hr>
+                      <div class="form-group">
                       <input type="text" name="direccion_cliente" value="" placeholder="Direccion" class="form-control">
+                      </div>
                       <hr>
+                      <div class="form-group">
                       <input type="text" name="cp_cliente" value="" placeholder="CP" class="form-control">
+                      </div>
                       <hr>
+                      <div class="form-group">
                       <input type="text" name="ciudad_cliente" value="" placeholder="Ciudad" class="form-control">
+                      </div>
                       <hr>
+                      <div class="form-group">
                       <input type="text" name="colonia_cliente" value="" placeholder="Colonia" class="form-control">
+                      </div>
                       <hr>
+                      <div class="form-group">
                       <input type="tel" name="telefono_cliente" value="" placeholder="Telefono" class="form-control">
+                      </div>
                       <hr>
+                      <div class="form-group">
                       <input type="email" name="email_cliente" value="" placeholder="Email" class="form-control">
+                      </div>
                       <hr>
                     </div>
                   </div>
@@ -176,12 +212,15 @@ $ReservacionesC = new ReservacionesController();
 		    			<div class="form-group">
 		    				<hr>
 		    				<label>Mesa:</label>
-		    				                              <!-- $id_tabla,	$nombre_columna,	$tabla,			$name,			$id,			$where = ' ' -->
+		    				<div class="form-group"
+                                              <!-- $id_tabla,	$nombre_columna,	$tabla,			$name,			$id,			$where = ' ' -->
                         	<?php echo $MesasC->getDropDown('Id_mesa',		'Nombre',				'mesas',	'nombre_mesas',	'nombre' ); ?>
                 <label>Costo por lugar: $ <input id="precioMesa" type="text" readonly="readonly"
                 class="form-control"  >
                 </label>
+                </div>
 			    			<hr>
+                <div class="form-group">
 			    			<select class="form-control" onchange="updateprecio(this.value)" name="No_asientos_reservaciones">
 			    					<option value="1">N&uacute;mero de lugares</option>
 			    					<option value="1"> 1</option>
@@ -194,12 +233,17 @@ $ReservacionesC = new ReservacionesController();
 			    					<option value="6"> 6 (3)</option>
 			    					<option value="6"> 6 (4)</option>
 			    			</select>
+                </div>
 			    			<hr>
 			    			<label>Total: $ <input id="precioTotal" type="text" readonly="readonly" class="form-control" name="costo_reservacion"> </label>
 			    			<hr>
+                <div class="form-group">
 			    			<input type="date" name="Fecha_reservaciones" value="" placeholder="fecha" class="form-control">
+                </div>
 			    			<hr>
+                <div class="form-group">
 			    			<input type="time" name="Hora_reservaciones" value="" placeholder="hora" class="form-control">
+                </div>
 			    			<hr>
 			    			
 	         			</div>	    				

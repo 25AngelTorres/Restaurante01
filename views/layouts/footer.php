@@ -101,9 +101,9 @@
     <!-- Custom Theme JavaScript -->
     <script src="../js/agency.js"></script>
 
-    <!-- Bootstrap Validator --
+    <!-- Bootstrap Validator -->
     <script type="text/javascript" src="../js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="../js/bootstrapValidator.min.js"></script> -->
+    <script type="text/javascript" src="../js/bootstrapValidator.min.js"></script>
 
 </body>
 

@@ -7,7 +7,7 @@ Contine las clases
 		
 		//Instancia de la clase Mesas----No necesario para todos los controladores
 		public $muestra_errores = false;
-		public $muestra_exito=true;
+		public $muestra_exito = false;
 		function __construct(){
 			 parent::Mesas();
 		}

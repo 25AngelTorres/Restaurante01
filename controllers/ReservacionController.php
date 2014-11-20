@@ -7,7 +7,7 @@ Contine las clases
 		
 		//Instancia de la clase Reservacion
 		public $muestra_errores = false;
-		public $muestra_exito=true;
+		public $muestra_exito=false;
 		function __construct(){
 			 parent::Reservacion();
 		}

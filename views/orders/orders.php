@@ -128,6 +128,91 @@ if(isset($_POST['nombre_cliente'])
     }
   }
 
+  if(isset($_POST['Costo1']) && $_POST['Costo1']>0){
+        $array = array(
+            "platillo_pedido" => $_POST['Platillo_1'],
+            "raciones_pedido" => $_POST['Platillo1_raciones'],
+        );
+
+        $PedidoC -> inserta_Pedido($array);
+
+        $array2 = array(
+            "pedido_orden" => $PedidoC -> ultimo_id(),
+            "saldo_orden" => $_POST['saldo_orden1'],
+            "cliente_orden" => $_SESSION['id_cte'],
+        );
+
+        $OrdenC -> inserta_Orden($array2);
+    }
+
+    if(isset($_POST['Costo2']) && $_POST['Costo2']>0){
+        $array = array(
+            "platillo_pedido" => $_POST['Platillo_2'],
+            "raciones_pedido" => $_POST['Platillo2_raciones'],
+        );
+
+        $PedidoC -> inserta_Pedido($array);
+
+        $array2 = array(
+            "pedido_orden" => $PedidoC -> ultimo_id(),
+            "saldo_orden" => $_POST['saldo_orden2'],
+            "cliente_orden" => $_SESSION['id_cte'],
+        );
+
+        $OrdenC -> inserta_Orden($array2);
+    }
+
+    if(isset($_POST['Costo3']) && $_POST['Costo3']>0){
+        $array = array(
+            "platillo_pedido" => $_POST['Platillo_3'],
+            "raciones_pedido" => $_POST['Platillo3_raciones'],
+        );
+
+        $PedidoC -> inserta_Pedido($array);
+
+        $array2 = array(
+            "pedido_orden" => $PedidoC -> ultimo_id(),
+            "saldo_orden" => $_POST['saldo_orden3'],
+            "cliente_orden" => $_SESSION['id_cte'],
+        );
+
+        $OrdenC -> inserta_Orden($array2);
+    }
+
+    if(isset($_POST['Costo4']) && $_POST['Costo4']>0){
+        $array = array(
+            "platillo_pedido" => $_POST['Platillo_4'],
+            "raciones_pedido" => $_POST['Platillo4_raciones'],
+        );
+
+        $PedidoC -> inserta_Pedido($array);
+
+        $array2 = array(
+            "pedido_orden" => $PedidoC -> ultimo_id(),
+            "saldo_orden" => $_POST['saldo_orden4'],
+            "cliente_orden" => $_SESSION['id_cte'],
+        );
+
+        $OrdenC -> inserta_Orden($array2);
+    }
+
+    if(isset($_POST['Costo5']) && $_POST['Costo5']>0){
+        $array = array(
+            "platillo_pedido" => $_POST['Platillo_5'],
+            "raciones_pedido" => $_POST['Platillo5_raciones'],
+        );
+
+        $PedidoC -> inserta_Pedido($array);
+
+        $array2 = array(
+            "pedido_orden" => $PedidoC -> ultimo_id(),
+            "saldo_orden" => $_POST['saldo_orden5'],
+            "cliente_orden" => $_SESSION['id_cte'],
+        );
+
+        $OrdenC -> inserta_Orden($array2);
+    }
+
 ?>
 
 <script type="text/javascript">
@@ -324,12 +409,18 @@ if(isset($_POST['nombre_cliente'])
 
                 </div>
             </div>
+            <hr>
+            <div class="row">
+                <div class="col-lg-12 text-center">
+        <?php echo $OrdenC -> errores(); ?>
+                </div>
+            </div>
         </div>
     </section>
 
     <section id="form_orders" class="bg-darkest-gray">
     	<div class="container bg-light-gray form_delta">
-    		<form class="form-horizontal" role="form" id="registerForm" method="POST" enctype="multipart/form-data">
+    		<form class="form-horizontal registerForm" role="form" id="registerForm" method="POST" enctype="multipart/form-data">
 	    		<div class="row">
 	    			<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
 	    				<h2>Ingresa los datos requeridos</h2>
@@ -353,21 +444,35 @@ if(isset($_POST['nombre_cliente'])
                 echo '
                   <div class="row" id="session_No_Iniciada">
                     <div class="col-lg-9 col-lg-offset-2 col-md-10 col-md-offset-1">
-                      <h3>Llena los campos requeridos o <a href="../site/login.php">Inicia Session</a> Para realizar tu orden</h3>
+                      <h3>Llena los campos requeridos o <a href="../site/login.php">Inicia Session</a> Para realizar tu reservaci&oacute;n</h3>
                       <hr>
+                      <div class="form-group">
                       <input type="text" name="nombre_cliente" value="" placeholder="Nombre" class="form-control">
+                      </div>
                       <hr>
+                      <div class="form-group">
                       <input type="text" name="direccion_cliente" value="" placeholder="Direccion" class="form-control">
+                      </div>
                       <hr>
+                      <div class="form-group">
                       <input type="text" name="cp_cliente" value="" placeholder="CP" class="form-control">
+                      </div>
                       <hr>
+                      <div class="form-group">
                       <input type="text" name="ciudad_cliente" value="" placeholder="Ciudad" class="form-control">
+                      </div>
                       <hr>
+                      <div class="form-group">
                       <input type="text" name="colonia_cliente" value="" placeholder="Colonia" class="form-control">
+                      </div>
                       <hr>
+                      <div class="form-group">
                       <input type="tel" name="telefono_cliente" value="" placeholder="Telefono" class="form-control">
+                      </div>
                       <hr>
+                      <div class="form-group">
                       <input type="email" name="email_cliente" value="" placeholder="Email" class="form-control">
+                      </div>
                       <hr>
                     </div>
                   </div>
@@ -378,11 +483,13 @@ if(isset($_POST['nombre_cliente'])
 	    		<div class="row">
 	    			<div class="col-md-2 col-md-offset-1">
 	    				<h3>Platillo 1</h3>
-
+                        <div class="form-group">
 	    				<?php echo $PlatillosC->getDropDown('Precio','Nombre','platillos','Platillo_1','Platillo_1','UNO') ?>
 
 	    				<label>Costo por Platillo: $ <input id="Platillo_1Costo" type="text" readonly="readonly" class="form-control" name="Costo1" >
                 		</label>
+                        </div>
+                        <div class="form-group">
 	    				<select name="Platillo1_raciones" onchange="updateSTUNO(this.value)" class="form-control">
 	    					<option value="0">Racion</option>
 	    					<option value="1">1 Persona</option>
@@ -393,15 +500,18 @@ if(isset($_POST['nombre_cliente'])
 	    				</select>
 	    				<label>Subtotal: $ <input id="Platillo_1Subtotal" value="0" type="text" readonly="readonly" class="form-control" name ="saldo_orden1">
                 		</label>
+                        </div>
 	    			</div>
 
 	    			<div class="col-md-2 col-md-offset-0">
 	    				<h3>Platillo 2</h3>
-
+                        <div class="form-group">
 	    				<?php echo $PlatillosC->getDropDown('Precio','Nombre','platillos','Platillo_2','Platillo_2', 'DOS') ?>
 
 	    				<label>Costo por Platillo: $ <input id="Platillo_2Costo" type="text" readonly="readonly" class="form-control" Name="Costo2" >
                 		</label>
+                        </div>
+                        <div class="form-group">
 	    				<select name="Platillo2_raciones" onchange="updateSTDOS(this.value)" class="form-control">
 	    					<option value="0">Racion</option>
 	    					<option value="1">1 Persona</option>
@@ -412,15 +522,18 @@ if(isset($_POST['nombre_cliente'])
 	    				</select>
 	    				<label>Subtotal: $ <input id="Platillo_2Subtotal" type="text" value="0" readonly="readonly" class="form-control" name ="saldo_orden2">
                 		</label>
+                        </div>
 	    			</div>
 
 	    			<div class="col-md-2 col-md-offset-0">
 	    				<h3>Platillo 3</h3>
-
+                        <div class="form-group">
 	    				<?php echo $PlatillosC->getDropDown('Precio','Nombre','platillos','Platillo_3','Platillo_3','TRES') ?>
 
 	    				<label>Costo por Platillo: $ <input id="Platillo_3Costo" type="text" readonly="readonly" class="form-control" Name="Costo3" >
                 		</label>
+                        </div>
+                        <div class="form-group">
 	    				<select name="Platillo3_raciones" onchange="updateSTTRES(this.value)" class="form-control">
 	    					<option value="0">Racion</option>
 	    					<option value="1">1 Persona</option>
@@ -431,15 +544,18 @@ if(isset($_POST['nombre_cliente'])
 	    				</select>
 	    				<label>Subtotal: $ <input id="Platillo_3Subtotal" type="text" value="0" readonly="readonly" class="form-control" name ="saldo_orden3">
                 		</label>
+                        </div>
 	    			</div>
 
 	    			<div class="col-md-2 col-md-offset-0">
 	    				<h3>Platillo 4</h3>
-
+                        <div class="form-group">
 	    				<?php echo $PlatillosC->getDropDown('Precio','Nombre','platillos','Platillo_4','Platillo_4','CUATRO') ?>
 
 	    				<label>Costo por Platillo: $ <input id="Platillo_4Costo" type="text" readonly="readonly" class="form-control" name="Cost4" >
                 		</label>
+                        </div>
+                        <div class="form-group">
 	    				<select name="Platillo4_raciones" onchange="updateSTCUATRO(this.value)" class="form-control">
 	    					<option value="0">Racion</option>
 	    					<option value="1">1 Persona</option>
@@ -450,15 +566,18 @@ if(isset($_POST['nombre_cliente'])
 	    				</select>
 	    				<label>Subtotal: $ <input id="Platillo_4Subtotal" type="text" value="0" readonly="readonly" class="form-control" name ="saldo_orden4">
                 		</label>
+                        </div>
 	    			</div>
 
 	    			<div class="col-md-2 col-md-offset-0">
 	    				<h3>Platillo 5</h3>
-
+                        <div class="form-group">
 	    				<?php echo $PlatillosC->getDropDown('Precio','Nombre','platillos','Platillo_5','Platillo_5','CINCO') ?>
 
 	    				<label>Costo por Platillo: $ <input id="Platillo_5Costo" type="text" readonly="readonly" class="form-control" name="Costo5">
                 		</label>
+                        </div>
+                        <div class="form-group">
 	    				<select name="Platillo5_raciones" onchange="updateSTCINCO(this.value)" class="form-control">
 	    					<option value="0">Racion</option>
 	    					<option value="1">1 Persona</option>
@@ -469,6 +588,7 @@ if(isset($_POST['nombre_cliente'])
 	    				</select>
 	    				<label>Subtotal: $ <input id="Platillo_5Subtotal" type="text" value="0" readonly="readonly" class="form-control" name ="saldo_orden5">
                 		</label>
+                        </div>
 	    			</div>
 
 	    		</div>

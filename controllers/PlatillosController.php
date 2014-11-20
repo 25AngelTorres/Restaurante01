@@ -7,7 +7,7 @@ Contine las clases
 		
 		//Instancia de la clase Platillos
 		public $muestra_errores = false;
-		public $muestra_exito=true;
+		public $muestra_exito=false;
 		function __construct(){
 			 parent::Platillos();
 		}
@@ -66,7 +66,7 @@ Contine las clases
 	         $rs = $this->consulta_sql(" select * from $tabla ".$where);
 	         $rows = $rs->GetArray();
 	         $dropDown = '<select class="form-control" id="'.$id.'" name="'.$name.'" onchange="update'.$onchange.'(this.value)">
-	                        <option value="">Selecciona de la lista </option>';
+	                        <option value="0">Selecciona de la lista </option>';
 	         foreach ($rows as $key => $value) {
 	         	$Precio = $value[$id_tabla];
 	            $dropDown.= '<option value="'.$Precio.'">'.utf8_encode($value[$nombre_columna]).'</option>';

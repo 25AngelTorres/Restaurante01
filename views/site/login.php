@@ -78,7 +78,7 @@ include ('../layouts/header.php');
                         <?php
                             echo $ClienteC -> errores(); ?>
                   
-                        <form role="form" method="POST" >
+                        <form role="form" method="POST" class="registerForm">
                           <div class="form-group">
                             <label for="email">Usuario</label>
                             <input type="text" class="form-control" id="email" name="email" placeholder="Usuario">
@@ -119,7 +119,7 @@ include ('../layouts/header.php');
 
 <section id="crearCuenta" class="bg-light-gray">
   <div class="container">
-    <form class="form-horizontal" role="form" id="registerForm" method="POST" enctype="multipart/form-data">
+    <form class="form-horizontal registerForm" role="form" id="registerForm" method="POST" enctype="multipart/form-data">
       <div class="row">
         <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
           <h2>Ingresa los datos requeridos</h2>
@@ -130,27 +130,45 @@ include ('../layouts/header.php');
               <h3>Datos personales</h3>
               <hr>
                 <?php echo $ClienteC -> errores(); ?>
-              <hr>
+              
+              <div class="form-group">
               <input type="text" name="nombre_cliente" value="" placeholder="Nombre" class="form-control">
+              </div>
               <hr>
+              <div class="form-group">
               <input type="email" name="email_cliente" value="" placeholder="Email" class="form-control">
+              </div>
               <hr>
+              <div class="form-group">
               <label for="password_C">Contraseña:</label>
               <input type="password" id="password_C" name="password_cliente" placehlder="Password" class="form-control">
+              </div>
               <hr>
+              <div class="form-group">
               <label for="password_CR">Repetir Contraseña:</label>
               <input type="password" id="password_CR" placehlder="Password" class="form-control" onchange="verificarPassword(this.value)">
               <input id="password_CRM" type="text" readonly="readonly" class="form-control"  >
+              </div>
               <hr>
+              <div class="form-group">
               <input type="text" name="cp_cliente" value="" placeholder="CP" class="form-control">
+              </div>
               <hr>
+              <div class="form-group">
               <input type="text" name="ciudad_cliente" value="" placeholder="Ciudad" class="form-control">
+              </div>
               <hr>
+              <div class="form-group">
               <input type="text" name="colonia_cliente" value="" placeholder="Colonia" class="form-control">
+              </div>
               <hr>
+              <div class="form-group">
               <input type="text" name="direccion_cliente" value="" placeholder="Direccion" class="form-control">
+              </div>
               <hr>
+              <div class="form-group">
               <input type="number" name="telefono_cliente" value="" placeholder="Telefono" class="form-control">
+              </div>
               <hr>
             </div>
           </div>
